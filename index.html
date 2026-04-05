@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="EronFit">
+<meta name="theme-color" content="#0a0a0a">
+<title>EronFit</title>
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgNTAwIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCI+CiAgPGRlZnM+CiAgICA8IS0tIE91dGVyIHNoaWVsZCBncmFkaWVudCAtLT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ic2hpZWxkT3V0ZXIiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzRhNTU2OCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxYTIwMmMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8IS0tIElubmVyIGJsdWUgcGFuZWwgZ3JhZGllbnQgLS0+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJsdWVQYW5lbEdyYWQiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJiNmNiMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxYTRhOGEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8IS0tIEJvdHRvbSBiYW5uZXIgZ3JhZGllbnQgLS0+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJhbm5lckdyYWQiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJkMzc0OCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxYTIwMmMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8IS0tIER1bWJiZWxsIGdyYWRpZW50IC0tPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJkYkdyYWQiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UyZThmMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2EwYWVjMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3MTgwOTYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8IS0tIFRleHQgZ3JhZGllbnQgd2hpdGUgLS0+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IndoaXRlVGV4dCIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2NiZDVlMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwhLS0gVGV4dCBncmFkaWVudCBibHVlIC0tPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJibHVlVGV4dCIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNjNiM2VkIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzJiNmNiMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwhLS0gTGlmdGVyIGJvZHkgZ3JhZGllbnQgLS0+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpZnRlckdyYWQiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzkwY2RmNCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyYjZjYjAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8IS0tIERyb3Agc2hhZG93IGZpbHRlciAtLT4KICAgIDxmaWx0ZXIgaWQ9InNoYWRvdyIgeD0iLTEwJSIgeT0iLTEwJSIgd2lkdGg9IjEyMCUiIGhlaWdodD0iMTMwJSI+CiAgICAgIDxmZURyb3BTaGFkb3cgZHg9IjAiIGR5PSI0IiBzdGREZXZpYXRpb249IjYiIGZsb29kLWNvbG9yPSIjMDAwIiBmbG9vZC1vcGFjaXR5PSIwLjUiLz4KICAgIDwvZmlsdGVyPgogICAgPGZpbHRlciBpZD0idGV4dFNoYWRvdyIgeD0iLTUlIiB5PSItNSUiIHdpZHRoPSIxMTAlIiBoZWlnaHQ9IjEyMCUiPgogICAgICA8ZmVEcm9wU2hhZG93IGR4PSIyIiBkeT0iMiIgc3RkRGV2aWF0aW9uPSIyIiBmbG9vZC1jb2xvcj0iIzAwMCIgZmxvb2Qtb3BhY2l0eT0iMC43Ii8+CiAgICA8L2ZpbHRlcj4KICAgIDxmaWx0ZXIgaWQ9Imdsb3ciPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIzIiByZXN1bHQ9ImJsdXIiLz4KICAgICAgPGZlQ29tcG9zaXRlIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9ImJsdXIiIG9wZXJhdG9yPSJvdmVyIi8+CiAgICA8L2ZpbHRlcj4KICAgIDwhLS0gQ2xpcCBwYXRoIGZvciBibHVlIHBhbmVsIGluc2lkZSBzaGllbGQgLS0+CiAgICA8Y2xpcFBhdGggaWQ9InNoaWVsZENsaXAiPgogICAgICA8cG9seWdvbiBwb2ludHM9IjI1MCwyMiA0MjAsMTEwIDQyMCwyOTAgMjUwLDM3OCA4MCwyOTAgODAsMTEwIi8+CiAgICA8L2NsaXBQYXRoPgogIDwvZGVmcz4KCiAgPCEtLSDilIDilIAgT1VURVIgSEVYQUdPTiBTSElFTEQg4pSA4pSAIC0tPgogIDwhLS0gRGFyayBib3JkZXIvc2hhZG93IGxheWVyIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMjUwLDEwIDQzNSwxMDcgNDM1LDMwMyAyNTAsNDAwIDY1LDMwMyA2NSwxMDciCiAgICBmaWxsPSIjMGQxMTE3IiBmaWx0ZXI9InVybCgjc2hhZG93KSIvPgogIDwhLS0gTWFpbiBzaGllbGQgYm9keSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjI1MCwxOCA0MjgsMTEyIDQyOCwyOTggMjUwLDM5MiA3MiwyOTggNzIsMTEyIgogICAgZmlsbD0idXJsKCNzaGllbGRPdXRlcikiLz4KICA8IS0tIElubmVyIGhpZ2hsaWdodCBib3JkZXIgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIyNTAsMjggNDE4LDExOCA0MTgsMjg4IDI1MCwzNzggODIsMjg4IDgyLDExOCIKICAgIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzYzYjNlZCIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIwLjQiLz4KCiAgPCEtLSDilIDilIAgQkxVRSBCQUNLR1JPVU5EIFBBTkVMICh0b3AgcG9ydGlvbiBvZiBzaGllbGQpIOKUgOKUgCAtLT4KICA8cG9seWdvbiBwb2ludHM9IjI1MCwyOCA0MTgsMTE4IDQxOCwyMzAgMjUwLDI2MCA4MiwyMzAgODIsMTE4IgogICAgZmlsbD0idXJsKCNibHVlUGFuZWxHcmFkKSIgY2xpcC1wYXRoPSJ1cmwoI3NoaWVsZENsaXApIi8+CgogIDwhLS0g4pSA4pSAIEJBQ0tHUk9VTkQgREVUQUlMUyAoc3VidGxlIGd5bSBhdG1vc3BoZXJlKSDilIDilIAgLS0+CiAgPCEtLSBMaWdodCByYXlzIGZyb20gY2VudGVyIHRvcCAtLT4KICA8ZyBvcGFjaXR5PSIwLjE1IiBjbGlwLXBhdGg9InVybCgjc2hpZWxkQ2xpcCkiPgogICAgPGxpbmUgeDE9IjI1MCIgeTE9IjYwIiB4Mj0iMTAwIiB5Mj0iMjQwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMzAiLz4KICAgIDxsaW5lIHgxPSIyNTAiIHkxPSI2MCIgeDI9IjI1MCIgeTI9IjI2MCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIwIi8+CiAgICA8bGluZSB4MT0iMjUwIiB5MT0iNjAiIHgyPSI0MDAiIHkyPSIyNDAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzMCIvPgogIDwvZz4KCiAgPCEtLSDilIDilIAgTElGVEVSIEZJR1VSRSAoY2VudGVyIG9mIHNoaWVsZCwgc3R5bGl6ZWQpIOKUgOKUgCAtLT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNTAsIDE1NSkiIGZpbHRlcj0idXJsKCNzaGFkb3cpIj4KICAgIDwhLS0gRnVsbCBiYXJiZWxsIGJlaW5nIHByZXNzZWQgb3ZlcmhlYWQgLS0+CiAgICA8IS0tIExlZnQgd2VpZ2h0IHBsYXRlIHN0YWNrIC0tPgogICAgPHJlY3QgeD0iLTEwNSIgeT0iLTE4IiB3aWR0aD0iMTIiIGhlaWdodD0iMzYiIHJ4PSIzIiBmaWxsPSJ1cmwoI2RiR3JhZCkiIHN0cm9rZT0iIzRhNTU2OCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8cmVjdCB4PSItMTE4IiB5PSItMTQiIHdpZHRoPSIxNCIgaGVpZ2h0PSIyOCIgcng9IjMiIGZpbGw9InVybCgjZGJHcmFkKSIgc3Ryb2tlPSIjNGE1NTY4IiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDxyZWN0IHg9Ii0xMzIiIHk9Ii0xMSIgd2lkdGg9IjEzIiBoZWlnaHQ9IjIyIiByeD0iMyIgZmlsbD0iIzYzYjNlZCIgc3Ryb2tlPSIjMmI2Y2IwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDwhLS0gUmlnaHQgd2VpZ2h0IHBsYXRlIHN0YWNrIC0tPgogICAgPHJlY3QgeD0iOTMiIHk9Ii0xOCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjM2IiByeD0iMyIgZmlsbD0idXJsKCNkYkdyYWQpIiBzdHJva2U9IiM0YTU1NjgiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPHJlY3QgeD0iMTA0IiB5PSItMTQiIHdpZHRoPSIxNCIgaGVpZ2h0PSIyOCIgcng9IjMiIGZpbGw9InVybCgjZGJHcmFkKSIgc3Ryb2tlPSIjNGE1NTY4IiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDxyZWN0IHg9IjExOSIgeT0iLTExIiB3aWR0aD0iMTMiIGhlaWdodD0iMjIiIHJ4PSIzIiBmaWxsPSIjNjNiM2VkIiBzdHJva2U9IiMyYjZjYjAiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPCEtLSBCYXJiZWxsIGJhciAtLT4KICAgIDxyZWN0IHg9Ii05MyIgeT0iLTUiIHdpZHRoPSIxODYiIGhlaWdodD0iMTAiIHJ4PSI1IiBmaWxsPSJ1cmwoI2RiR3JhZCkiIHN0cm9rZT0iIzcxODA5NiIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8IS0tIEJhciBzaGluZSAtLT4KICAgIDxyZWN0IHg9Ii05MCIgeT0iLTMiIHdpZHRoPSIxODAiIGhlaWdodD0iMyIgcng9IjIiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjQiLz4KCiAgICA8IS0tIExpZnRlciBib2R5IC0tPgogICAgPCEtLSBIZWFkIC0tPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9Ii03MiIgcj0iMjIiIGZpbGw9InVybCgjbGlmdGVyR3JhZCkiIHN0cm9rZT0iIzJiNmNiMCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8IS0tIE5lY2sgLS0+CiAgICA8cmVjdCB4PSItOCIgeT0iLTUyIiB3aWR0aD0iMTYiIGhlaWdodD0iMTIiIGZpbGw9InVybCgjbGlmdGVyR3JhZCkiLz4KICAgIDwhLS0gVG9yc28g4oCUIHdpZGVyIGF0IHNob3VsZGVycyAtLT4KICAgIDxwYXRoIGQ9Ik0tMzgsLTQwIEwtNDQsMzAgTDQ0LDMwIEwzOCwtNDAgUTIwLC01NSAwLC01NiBRLTIwLC01NSAtMzgsLTQwIFoiCiAgICAgIGZpbGw9InVybCgjbGlmdGVyR3JhZCkiIHN0cm9rZT0iIzJiNmNiMCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICAgIDwhLS0gQXJtcyB1cCBob2xkaW5nIGJhciAtLT4KICAgIDwhLS0gTGVmdCB1cHBlciBhcm0gLS0+CiAgICA8cGF0aCBkPSJNLTM4LC00MCBRLTYwLC0zMCAtNzAsLTE4IiBzdHJva2U9InVybCgjbGlmdGVyR3JhZCkiIHN0cm9rZS13aWR0aD0iMTgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgZmlsbD0ibm9uZSIvPgogICAgPCEtLSBMZWZ0IGZvcmVhcm0gLS0+CiAgICA8cGF0aCBkPSJNLTcwLC0xOCBRLTgwLC0xMiAtODUsLTUiIHN0cm9rZT0idXJsKCNsaWZ0ZXJHcmFkKSIgc3Ryb2tlLXdpZHRoPSIxNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+CiAgICA8IS0tIFJpZ2h0IHVwcGVyIGFybSAtLT4KICAgIDxwYXRoIGQ9Ik0zOCwtNDAgUTYwLC0zMCA3MCwtMTgiIHN0cm9rZT0idXJsKCNsaWZ0ZXJHcmFkKSIgc3Ryb2tlLXdpZHRoPSIxOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+CiAgICA8IS0tIFJpZ2h0IGZvcmVhcm0gLS0+CiAgICA8cGF0aCBkPSJNNzAsLTE4IFE4MCwtMTIgODUsLTUiIHN0cm9rZT0idXJsKCNsaWZ0ZXJHcmFkKSIgc3Ryb2tlLXdpZHRoPSIxNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+CiAgICA8IS0tIExlZ3MgLS0+CiAgICA8cGF0aCBkPSJNLTIwLDMwIEwtMjUsODAiIHN0cm9rZT0idXJsKCNsaWZ0ZXJHcmFkKSIgc3Ryb2tlLXdpZHRoPSIyMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+CiAgICA8cGF0aCBkPSJNMjAsMzAgTDI1LDgwIiBzdHJva2U9InVybCgjbGlmdGVyR3JhZCkiIHN0cm9rZS13aWR0aD0iMjAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgZmlsbD0ibm9uZSIvPgogICAgPCEtLSBGZWV0IC0tPgogICAgPGVsbGlwc2UgY3g9Ii0zMCIgY3k9Ijg1IiByeD0iMTYiIHJ5PSI4IiBmaWxsPSJ1cmwoI2xpZnRlckdyYWQpIiBzdHJva2U9IiMyYjZjYjAiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgICA8ZWxsaXBzZSBjeD0iMzAiIGN5PSI4NSIgcng9IjE2IiByeT0iOCIgZmlsbD0idXJsKCNsaWZ0ZXJHcmFkKSIgc3Ryb2tlPSIjMmI2Y2IwIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogICAgPCEtLSBNdXNjbGUgZGVmaW5pdGlvbiBsaW5lcyBvbiB0b3JzbyAtLT4KICAgIDxwYXRoIGQ9Ik0tMTAsLTUwIEwtOCwyNSIgc3Ryb2tlPSIjMmI2Y2IwIiBzdHJva2Utd2lkdGg9IjEuNSIgb3BhY2l0eT0iMC41Ii8+CiAgICA8cGF0aCBkPSJNMTAsLTUwIEw4LDI1IiBzdHJva2U9IiMyYjZjYjAiIHN0cm9rZS13aWR0aD0iMS41IiBvcGFjaXR5PSIwLjUiLz4KICAgIDxwYXRoIGQ9Ik0tMzUsLTIwIFEwLC0xNSAzNSwtMjAiIHN0cm9rZT0iIzJiNmNiMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuNSIgZmlsbD0ibm9uZSIvPgogICAgPCEtLSBTaGlydCBudW1iZXIvZGV0YWlsIC0tPgogICAgPHRleHQgeD0iMCIgeT0iNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjMWE0YThhIiBvcGFjaXR5PSIwLjYiPkVDPC90ZXh0PgogIDwvZz4KCiAgPCEtLSDilIDilIAgQk9UVE9NIERBUksgQkFOTkVSIOKUgOKUgCAtLT4KICA8IS0tIEJhbm5lciBzaGFkb3cgdG9wIGVkZ2UgLS0+CiAgPHJlY3QgeD0iNTUiIHk9IjI3MCIgd2lkdGg9IjM5MCIgaGVpZ2h0PSI4IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIwLjQiLz4KICA8IS0tIE1haW4gYmFubmVyIC0tPgogIDxwYXRoIGQ9Ik01NSwyNzIgTDQ0NSwyNzIgTDQ0NSwzNjggUTQ0NSwzODAgNDMzLDM4MCBMNjcsMzgwIFE1NSwzODAgNTUsMzY4IFoiCiAgICBmaWxsPSJ1cmwoI2Jhbm5lckdyYWQpIi8+CiAgPCEtLSBCYW5uZXIgdG9wIGhpZ2hsaWdodCBsaW5lIC0tPgogIDxsaW5lIHgxPSI1NSIgeTE9IjI3MiIgeDI9IjQ0NSIgeTI9IjI3MiIgc3Ryb2tlPSIjNjNiM2VkIiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9IjAuNiIvPgogIDwhLS0gQmFubmVyIGlubmVyIGhpZ2hsaWdodCAtLT4KICA8bGluZSB4MT0iNzAiIHkxPSIyODIiIHgyPSI0MzAiIHkyPSIyODIiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4xIi8+CgogIDwhLS0g4pSA4pSAIFRFWFQ6IEUtUk9OJ1Mg4pSA4pSAIC0tPgogIDx0ZXh0IHg9IjI1MCIgeT0iMzMwIgogICAgdGV4dC1hbmNob3I9Im1pZGRsZSIKICAgIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgSW1wYWN0LCBzYW5zLXNlcmlmIgogICAgZm9udC1zaXplPSI1OCIKICAgIGZvbnQtd2VpZ2h0PSI5MDAiCiAgICBmb250LXN0eWxlPSJpdGFsaWMiCiAgICBmaWxsPSJ1cmwoI3doaXRlVGV4dCkiCiAgICBzdHJva2U9IiMwMDAiCiAgICBzdHJva2Utd2lkdGg9IjMiCiAgICBwYWludC1vcmRlcj0ic3Ryb2tlIgogICAgZmlsdGVyPSJ1cmwoI3RleHRTaGFkb3cpIgogICAgbGV0dGVyLXNwYWNpbmc9IjIiPkUtUk9OJ1M8L3RleHQ+CgogIDwhLS0g4pSA4pSAIFRFWFQ6IExJRlRTIOKUgOKUgCAtLT4KICA8dGV4dCB4PSIyNTAiIHk9IjM3MiIKICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiCiAgICBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssIEltcGFjdCwgc2Fucy1zZXJpZiIKICAgIGZvbnQtc2l6ZT0iNTIiCiAgICBmb250LXdlaWdodD0iOTAwIgogICAgZm9udC1zdHlsZT0iaXRhbGljIgogICAgZmlsbD0idXJsKCNibHVlVGV4dCkiCiAgICBzdHJva2U9IiMwMDAiCiAgICBzdHJva2Utd2lkdGg9IjMiCiAgICBwYWludC1vcmRlcj0ic3Ryb2tlIgogICAgZmlsdGVyPSJ1cmwoI3RleHRTaGFkb3cpIgogICAgbGV0dGVyLXNwYWNpbmc9IjQiPkxJRlRTPC90ZXh0PgoKICA8IS0tIOKUgOKUgCBDUk9TU0VEIERVTUJCRUxMUyAoYmVsb3cgYmFubmVyKSDilIDilIAgLS0+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjUwLCA0MjApIiBmaWx0ZXI9InVybCgjc2hhZG93KSI+CiAgICA8IS0tIExlZnQgZHVtYmJlbGwgKHJvdGF0ZWQgLTM1ZGVnKSAtLT4KICAgIDxnIHRyYW5zZm9ybT0icm90YXRlKC0zNSkiPgogICAgICA8IS0tIExlZnQgcGxhdGUgLS0+CiAgICAgIDxyZWN0IHg9Ii01MiIgeT0iLTkiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxOCIgcng9IjMiIGZpbGw9InVybCgjZGJHcmFkKSIgc3Ryb2tlPSIjNGE1NTY4IiBzdHJva2Utd2lkdGg9IjEiLz4KICAgICAgPHJlY3QgeD0iLTYyIiB5PSItNyIgd2lkdGg9IjExIiBoZWlnaHQ9IjE0IiByeD0iMiIgZmlsbD0iIzYzYjNlZCIgc3Ryb2tlPSIjMmI2Y2IwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgICAgPCEtLSBCYXIgLS0+CiAgICAgIDxyZWN0IHg9Ii00MiIgeT0iLTQiIHdpZHRoPSI4NCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0idXJsKCNkYkdyYWQpIiBzdHJva2U9IiM3MTgwOTYiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgICA8IS0tIEJhciBzaGluZSAtLT4KICAgICAgPHJlY3QgeD0iLTQwIiB5PSItMiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjMiIHJ4PSIyIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC41Ii8+CiAgICAgIDwhLS0gUmlnaHQgcGxhdGUgLS0+CiAgICAgIDxyZWN0IHg9IjQyIiB5PSItOSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjE4IiByeD0iMyIgZmlsbD0idXJsKCNkYkdyYWQpIiBzdHJva2U9IiM0YTU1NjgiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgICA8cmVjdCB4PSI1MSIgeT0iLTciIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9IiM2M2IzZWQiIHN0cm9rZT0iIzJiNmNiMCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8L2c+CiAgICA8IS0tIFJpZ2h0IGR1bWJiZWxsIChyb3RhdGVkICszNWRlZykgLS0+CiAgICA8ZyB0cmFuc2Zvcm09InJvdGF0ZSgzNSkiPgogICAgICA8IS0tIExlZnQgcGxhdGUgLS0+CiAgICAgIDxyZWN0IHg9Ii01MiIgeT0iLTkiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxOCIgcng9IjMiIGZpbGw9InVybCgjZGJHcmFkKSIgc3Ryb2tlPSIjNGE1NTY4IiBzdHJva2Utd2lkdGg9IjEiLz4KICAgICAgPHJlY3QgeD0iLTYyIiB5PSItNyIgd2lkdGg9IjExIiBoZWlnaHQ9IjE0IiByeD0iMiIgZmlsbD0iIzYzYjNlZCIgc3Ryb2tlPSIjMmI2Y2IwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgICAgPCEtLSBCYXIgLS0+CiAgICAgIDxyZWN0IHg9Ii00MiIgeT0iLTQiIHdpZHRoPSI4NCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0idXJsKCNkYkdyYWQpIiBzdHJva2U9IiM3MTgwOTYiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgICA8IS0tIEJhciBzaGluZSAtLT4KICAgICAgPHJlY3QgeD0iLTQwIiB5PSItMiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjMiIHJ4PSIyIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC41Ii8+CiAgICAgIDwhLS0gUmlnaHQgcGxhdGUgLS0+CiAgICAgIDxyZWN0IHg9IjQyIiB5PSItOSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjE4IiByeD0iMyIgZmlsbD0idXJsKCNkYkdyYWQpIiBzdHJva2U9IiM0YTU1NjgiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgICA8cmVjdCB4PSI1MSIgeT0iLTciIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9IiM2M2IzZWQiIHN0cm9rZT0iIzJiNmNiMCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8L2c+CiAgICA8IS0tIENlbnRlciBjcm9zcyBoaWdobGlnaHQgZG90IC0tPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjUiIGZpbGw9IiM2M2IzZWQiIG9wYWNpdHk9IjAuOCIvPgogIDwvZz4KCiAgPCEtLSDilIDilIAgT1VURVIgU0hJRUxEIEFDQ0VOVCBMSU5FUyDilIDilIAgLS0+CiAgPCEtLSBUb3AgcG9pbnQgYWNjZW50IC0tPgogIDxsaW5lIHgxPSIyMzAiIHkxPSIxOCIgeDI9IjI3MCIgeTI9IjE4IiBzdHJva2U9IiM2M2IzZWQiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC41Ii8+CiAgPCEtLSBTaWRlIGFjY2VudHMgLS0+CiAgPGxpbmUgeDE9IjcyIiB5MT0iMTQwIiB4Mj0iODIiIHkyPSIxNDUiIHN0cm9rZT0iIzYzYjNlZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuNCIvPgogIDxsaW5lIHgxPSI0MjgiIHkxPSIxNDAiIHgyPSI0MTgiIHkyPSIxNDUiIHN0cm9rZT0iIzYzYjNlZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuNCIvPgoKPC9zdmc+Cg==">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgNTAwIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCI+CiAgPGRlZnM+CiAgICA8IS0tIE91dGVyIHNoaWVsZCBncmFkaWVudCAtLT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ic2hpZWxkT3V0ZXIiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzRhNTU2OCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxYTIwMmMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8IS0tIElubmVyIGJsdWUgcGFuZWwgZ3JhZGllbnQgLS0+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJsdWVQYW5lbEdyYWQiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJiNmNiMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxYTRhOGEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8IS0tIEJvdHRvbSBiYW5uZXIgZ3JhZGllbnQgLS0+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJhbm5lckdyYWQiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJkMzc0OCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxYTIwMmMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8IS0tIER1bWJiZWxsIGdyYWRpZW50IC0tPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJkYkdyYWQiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UyZThmMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2EwYWVjMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3MTgwOTYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8IS0tIFRleHQgZ3JhZGllbnQgd2hpdGUgLS0+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IndoaXRlVGV4dCIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2NiZDVlMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwhLS0gVGV4dCBncmFkaWVudCBibHVlIC0tPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJibHVlVGV4dCIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNjNiM2VkIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzJiNmNiMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwhLS0gTGlmdGVyIGJvZHkgZ3JhZGllbnQgLS0+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpZnRlckdyYWQiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzkwY2RmNCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyYjZjYjAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8IS0tIERyb3Agc2hhZG93IGZpbHRlciAtLT4KICAgIDxmaWx0ZXIgaWQ9InNoYWRvdyIgeD0iLTEwJSIgeT0iLTEwJSIgd2lkdGg9IjEyMCUiIGhlaWdodD0iMTMwJSI+CiAgICAgIDxmZURyb3BTaGFkb3cgZHg9IjAiIGR5PSI0IiBzdGREZXZpYXRpb249IjYiIGZsb29kLWNvbG9yPSIjMDAwIiBmbG9vZC1vcGFjaXR5PSIwLjUiLz4KICAgIDwvZmlsdGVyPgogICAgPGZpbHRlciBpZD0idGV4dFNoYWRvdyIgeD0iLTUlIiB5PSItNSUiIHdpZHRoPSIxMTAlIiBoZWlnaHQ9IjEyMCUiPgogICAgICA8ZmVEcm9wU2hhZG93IGR4PSIyIiBkeT0iMiIgc3RkRGV2aWF0aW9uPSIyIiBmbG9vZC1jb2xvcj0iIzAwMCIgZmxvb2Qtb3BhY2l0eT0iMC43Ii8+CiAgICA8L2ZpbHRlcj4KICAgIDxmaWx0ZXIgaWQ9Imdsb3ciPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIzIiByZXN1bHQ9ImJsdXIiLz4KICAgICAgPGZlQ29tcG9zaXRlIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9ImJsdXIiIG9wZXJhdG9yPSJvdmVyIi8+CiAgICA8L2ZpbHRlcj4KICAgIDwhLS0gQ2xpcCBwYXRoIGZvciBibHVlIHBhbmVsIGluc2lkZSBzaGllbGQgLS0+CiAgICA8Y2xpcFBhdGggaWQ9InNoaWVsZENsaXAiPgogICAgICA8cG9seWdvbiBwb2ludHM9IjI1MCwyMiA0MjAsMTEwIDQyMCwyOTAgMjUwLDM3OCA4MCwyOTAgODAsMTEwIi8+CiAgICA8L2NsaXBQYXRoPgogIDwvZGVmcz4KCiAgPCEtLSDilIDilIAgT1VURVIgSEVYQUdPTiBTSElFTEQg4pSA4pSAIC0tPgogIDwhLS0gRGFyayBib3JkZXIvc2hhZG93IGxheWVyIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMjUwLDEwIDQzNSwxMDcgNDM1LDMwMyAyNTAsNDAwIDY1LDMwMyA2NSwxMDciCiAgICBmaWxsPSIjMGQxMTE3IiBmaWx0ZXI9InVybCgjc2hhZG93KSIvPgogIDwhLS0gTWFpbiBzaGllbGQgYm9keSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjI1MCwxOCA0MjgsMTEyIDQyOCwyOTggMjUwLDM5MiA3MiwyOTggNzIsMTEyIgogICAgZmlsbD0idXJsKCNzaGllbGRPdXRlcikiLz4KICA8IS0tIElubmVyIGhpZ2hsaWdodCBib3JkZXIgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIyNTAsMjggNDE4LDExOCA0MTgsMjg4IDI1MCwzNzggODIsMjg4IDgyLDExOCIKICAgIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzYzYjNlZCIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIwLjQiLz4KCiAgPCEtLSDilIDilIAgQkxVRSBCQUNLR1JPVU5EIFBBTkVMICh0b3AgcG9ydGlvbiBvZiBzaGllbGQpIOKUgOKUgCAtLT4KICA8cG9seWdvbiBwb2ludHM9IjI1MCwyOCA0MTgsMTE4IDQxOCwyMzAgMjUwLDI2MCA4MiwyMzAgODIsMTE4IgogICAgZmlsbD0idXJsKCNibHVlUGFuZWxHcmFkKSIgY2xpcC1wYXRoPSJ1cmwoI3NoaWVsZENsaXApIi8+CgogIDwhLS0g4pSA4pSAIEJBQ0tHUk9VTkQgREVUQUlMUyAoc3VidGxlIGd5bSBhdG1vc3BoZXJlKSDilIDilIAgLS0+CiAgPCEtLSBMaWdodCByYXlzIGZyb20gY2VudGVyIHRvcCAtLT4KICA8ZyBvcGFjaXR5PSIwLjE1IiBjbGlwLXBhdGg9InVybCgjc2hpZWxkQ2xpcCkiPgogICAgPGxpbmUgeDE9IjI1MCIgeTE9IjYwIiB4Mj0iMTAwIiB5Mj0iMjQwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMzAiLz4KICAgIDxsaW5lIHgxPSIyNTAiIHkxPSI2MCIgeDI9IjI1MCIgeTI9IjI2MCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIwIi8+CiAgICA8bGluZSB4MT0iMjUwIiB5MT0iNjAiIHgyPSI0MDAiIHkyPSIyNDAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzMCIvPgogIDwvZz4KCiAgPCEtLSDilIDilIAgTElGVEVSIEZJR1VSRSAoY2VudGVyIG9mIHNoaWVsZCwgc3R5bGl6ZWQpIOKUgOKUgCAtLT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNTAsIDE1NSkiIGZpbHRlcj0idXJsKCNzaGFkb3cpIj4KICAgIDwhLS0gRnVsbCBiYXJiZWxsIGJlaW5nIHByZXNzZWQgb3ZlcmhlYWQgLS0+CiAgICA8IS0tIExlZnQgd2VpZ2h0IHBsYXRlIHN0YWNrIC0tPgogICAgPHJlY3QgeD0iLTEwNSIgeT0iLTE4IiB3aWR0aD0iMTIiIGhlaWdodD0iMzYiIHJ4PSIzIiBmaWxsPSJ1cmwoI2RiR3JhZCkiIHN0cm9rZT0iIzRhNTU2OCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8cmVjdCB4PSItMTE4IiB5PSItMTQiIHdpZHRoPSIxNCIgaGVpZ2h0PSIyOCIgcng9IjMiIGZpbGw9InVybCgjZGJHcmFkKSIgc3Ryb2tlPSIjNGE1NTY4IiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDxyZWN0IHg9Ii0xMzIiIHk9Ii0xMSIgd2lkdGg9IjEzIiBoZWlnaHQ9IjIyIiByeD0iMyIgZmlsbD0iIzYzYjNlZCIgc3Ryb2tlPSIjMmI2Y2IwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDwhLS0gUmlnaHQgd2VpZ2h0IHBsYXRlIHN0YWNrIC0tPgogICAgPHJlY3QgeD0iOTMiIHk9Ii0xOCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjM2IiByeD0iMyIgZmlsbD0idXJsKCNkYkdyYWQpIiBzdHJva2U9IiM0YTU1NjgiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPHJlY3QgeD0iMTA0IiB5PSItMTQiIHdpZHRoPSIxNCIgaGVpZ2h0PSIyOCIgcng9IjMiIGZpbGw9InVybCgjZGJHcmFkKSIgc3Ryb2tlPSIjNGE1NTY4IiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDxyZWN0IHg9IjExOSIgeT0iLTExIiB3aWR0aD0iMTMiIGhlaWdodD0iMjIiIHJ4PSIzIiBmaWxsPSIjNjNiM2VkIiBzdHJva2U9IiMyYjZjYjAiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPCEtLSBCYXJiZWxsIGJhciAtLT4KICAgIDxyZWN0IHg9Ii05MyIgeT0iLTUiIHdpZHRoPSIxODYiIGhlaWdodD0iMTAiIHJ4PSI1IiBmaWxsPSJ1cmwoI2RiR3JhZCkiIHN0cm9rZT0iIzcxODA5NiIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8IS0tIEJhciBzaGluZSAtLT4KICAgIDxyZWN0IHg9Ii05MCIgeT0iLTMiIHdpZHRoPSIxODAiIGhlaWdodD0iMyIgcng9IjIiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjQiLz4KCiAgICA8IS0tIExpZnRlciBib2R5IC0tPgogICAgPCEtLSBIZWFkIC0tPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9Ii03MiIgcj0iMjIiIGZpbGw9InVybCgjbGlmdGVyR3JhZCkiIHN0cm9rZT0iIzJiNmNiMCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8IS0tIE5lY2sgLS0+CiAgICA8cmVjdCB4PSItOCIgeT0iLTUyIiB3aWR0aD0iMTYiIGhlaWdodD0iMTIiIGZpbGw9InVybCgjbGlmdGVyR3JhZCkiLz4KICAgIDwhLS0gVG9yc28g4oCUIHdpZGVyIGF0IHNob3VsZGVycyAtLT4KICAgIDxwYXRoIGQ9Ik0tMzgsLTQwIEwtNDQsMzAgTDQ0LDMwIEwzOCwtNDAgUTIwLC01NSAwLC01NiBRLTIwLC01NSAtMzgsLTQwIFoiCiAgICAgIGZpbGw9InVybCgjbGlmdGVyR3JhZCkiIHN0cm9rZT0iIzJiNmNiMCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICAgIDwhLS0gQXJtcyB1cCBob2xkaW5nIGJhciAtLT4KICAgIDwhLS0gTGVmdCB1cHBlciBhcm0gLS0+CiAgICA8cGF0aCBkPSJNLTM4LC00MCBRLTYwLC0zMCAtNzAsLTE4IiBzdHJva2U9InVybCgjbGlmdGVyR3JhZCkiIHN0cm9rZS13aWR0aD0iMTgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgZmlsbD0ibm9uZSIvPgogICAgPCEtLSBMZWZ0IGZvcmVhcm0gLS0+CiAgICA8cGF0aCBkPSJNLTcwLC0xOCBRLTgwLC0xMiAtODUsLTUiIHN0cm9rZT0idXJsKCNsaWZ0ZXJHcmFkKSIgc3Ryb2tlLXdpZHRoPSIxNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+CiAgICA8IS0tIFJpZ2h0IHVwcGVyIGFybSAtLT4KICAgIDxwYXRoIGQ9Ik0zOCwtNDAgUTYwLC0zMCA3MCwtMTgiIHN0cm9rZT0idXJsKCNsaWZ0ZXJHcmFkKSIgc3Ryb2tlLXdpZHRoPSIxOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+CiAgICA8IS0tIFJpZ2h0IGZvcmVhcm0gLS0+CiAgICA8cGF0aCBkPSJNNzAsLTE4IFE4MCwtMTIgODUsLTUiIHN0cm9rZT0idXJsKCNsaWZ0ZXJHcmFkKSIgc3Ryb2tlLXdpZHRoPSIxNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+CiAgICA8IS0tIExlZ3MgLS0+CiAgICA8cGF0aCBkPSJNLTIwLDMwIEwtMjUsODAiIHN0cm9rZT0idXJsKCNsaWZ0ZXJHcmFkKSIgc3Ryb2tlLXdpZHRoPSIyMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBmaWxsPSJub25lIi8+CiAgICA8cGF0aCBkPSJNMjAsMzAgTDI1LDgwIiBzdHJva2U9InVybCgjbGlmdGVyR3JhZCkiIHN0cm9rZS13aWR0aD0iMjAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgZmlsbD0ibm9uZSIvPgogICAgPCEtLSBGZWV0IC0tPgogICAgPGVsbGlwc2UgY3g9Ii0zMCIgY3k9Ijg1IiByeD0iMTYiIHJ5PSI4IiBmaWxsPSJ1cmwoI2xpZnRlckdyYWQpIiBzdHJva2U9IiMyYjZjYjAiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgICA8ZWxsaXBzZSBjeD0iMzAiIGN5PSI4NSIgcng9IjE2IiByeT0iOCIgZmlsbD0idXJsKCNsaWZ0ZXJHcmFkKSIgc3Ryb2tlPSIjMmI2Y2IwIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogICAgPCEtLSBNdXNjbGUgZGVmaW5pdGlvbiBsaW5lcyBvbiB0b3JzbyAtLT4KICAgIDxwYXRoIGQ9Ik0tMTAsLTUwIEwtOCwyNSIgc3Ryb2tlPSIjMmI2Y2IwIiBzdHJva2Utd2lkdGg9IjEuNSIgb3BhY2l0eT0iMC41Ii8+CiAgICA8cGF0aCBkPSJNMTAsLTUwIEw4LDI1IiBzdHJva2U9IiMyYjZjYjAiIHN0cm9rZS13aWR0aD0iMS41IiBvcGFjaXR5PSIwLjUiLz4KICAgIDxwYXRoIGQ9Ik0tMzUsLTIwIFEwLC0xNSAzNSwtMjAiIHN0cm9rZT0iIzJiNmNiMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuNSIgZmlsbD0ibm9uZSIvPgogICAgPCEtLSBTaGlydCBudW1iZXIvZGV0YWlsIC0tPgogICAgPHRleHQgeD0iMCIgeT0iNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjMWE0YThhIiBvcGFjaXR5PSIwLjYiPkVDPC90ZXh0PgogIDwvZz4KCiAgPCEtLSDilIDilIAgQk9UVE9NIERBUksgQkFOTkVSIOKUgOKUgCAtLT4KICA8IS0tIEJhbm5lciBzaGFkb3cgdG9wIGVkZ2UgLS0+CiAgPHJlY3QgeD0iNTUiIHk9IjI3MCIgd2lkdGg9IjM5MCIgaGVpZ2h0PSI4IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIwLjQiLz4KICA8IS0tIE1haW4gYmFubmVyIC0tPgogIDxwYXRoIGQ9Ik01NSwyNzIgTDQ0NSwyNzIgTDQ0NSwzNjggUTQ0NSwzODAgNDMzLDM4MCBMNjcsMzgwIFE1NSwzODAgNTUsMzY4IFoiCiAgICBmaWxsPSJ1cmwoI2Jhbm5lckdyYWQpIi8+CiAgPCEtLSBCYW5uZXIgdG9wIGhpZ2hsaWdodCBsaW5lIC0tPgogIDxsaW5lIHgxPSI1NSIgeTE9IjI3MiIgeDI9IjQ0NSIgeTI9IjI3MiIgc3Ryb2tlPSIjNjNiM2VkIiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9IjAuNiIvPgogIDwhLS0gQmFubmVyIGlubmVyIGhpZ2hsaWdodCAtLT4KICA8bGluZSB4MT0iNzAiIHkxPSIyODIiIHgyPSI0MzAiIHkyPSIyODIiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4xIi8+CgogIDwhLS0g4pSA4pSAIFRFWFQ6IEUtUk9OJ1Mg4pSA4pSAIC0tPgogIDx0ZXh0IHg9IjI1MCIgeT0iMzMwIgogICAgdGV4dC1hbmNob3I9Im1pZGRsZSIKICAgIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgSW1wYWN0LCBzYW5zLXNlcmlmIgogICAgZm9udC1zaXplPSI1OCIKICAgIGZvbnQtd2VpZ2h0PSI5MDAiCiAgICBmb250LXN0eWxlPSJpdGFsaWMiCiAgICBmaWxsPSJ1cmwoI3doaXRlVGV4dCkiCiAgICBzdHJva2U9IiMwMDAiCiAgICBzdHJva2Utd2lkdGg9IjMiCiAgICBwYWludC1vcmRlcj0ic3Ryb2tlIgogICAgZmlsdGVyPSJ1cmwoI3RleHRTaGFkb3cpIgogICAgbGV0dGVyLXNwYWNpbmc9IjIiPkUtUk9OJ1M8L3RleHQ+CgogIDwhLS0g4pSA4pSAIFRFWFQ6IExJRlRTIOKUgOKUgCAtLT4KICA8dGV4dCB4PSIyNTAiIHk9IjM3MiIKICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiCiAgICBmb250LWZhbWlseT0iQXJpYWwgQmxhY2ssIEltcGFjdCwgc2Fucy1zZXJpZiIKICAgIGZvbnQtc2l6ZT0iNTIiCiAgICBmb250LXdlaWdodD0iOTAwIgogICAgZm9udC1zdHlsZT0iaXRhbGljIgogICAgZmlsbD0idXJsKCNibHVlVGV4dCkiCiAgICBzdHJva2U9IiMwMDAiCiAgICBzdHJva2Utd2lkdGg9IjMiCiAgICBwYWludC1vcmRlcj0ic3Ryb2tlIgogICAgZmlsdGVyPSJ1cmwoI3RleHRTaGFkb3cpIgogICAgbGV0dGVyLXNwYWNpbmc9IjQiPkxJRlRTPC90ZXh0PgoKICA8IS0tIOKUgOKUgCBDUk9TU0VEIERVTUJCRUxMUyAoYmVsb3cgYmFubmVyKSDilIDilIAgLS0+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjUwLCA0MjApIiBmaWx0ZXI9InVybCgjc2hhZG93KSI+CiAgICA8IS0tIExlZnQgZHVtYmJlbGwgKHJvdGF0ZWQgLTM1ZGVnKSAtLT4KICAgIDxnIHRyYW5zZm9ybT0icm90YXRlKC0zNSkiPgogICAgICA8IS0tIExlZnQgcGxhdGUgLS0+CiAgICAgIDxyZWN0IHg9Ii01MiIgeT0iLTkiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxOCIgcng9IjMiIGZpbGw9InVybCgjZGJHcmFkKSIgc3Ryb2tlPSIjNGE1NTY4IiBzdHJva2Utd2lkdGg9IjEiLz4KICAgICAgPHJlY3QgeD0iLTYyIiB5PSItNyIgd2lkdGg9IjExIiBoZWlnaHQ9IjE0IiByeD0iMiIgZmlsbD0iIzYzYjNlZCIgc3Ryb2tlPSIjMmI2Y2IwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgICAgPCEtLSBCYXIgLS0+CiAgICAgIDxyZWN0IHg9Ii00MiIgeT0iLTQiIHdpZHRoPSI4NCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0idXJsKCNkYkdyYWQpIiBzdHJva2U9IiM3MTgwOTYiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgICA8IS0tIEJhciBzaGluZSAtLT4KICAgICAgPHJlY3QgeD0iLTQwIiB5PSItMiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjMiIHJ4PSIyIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC41Ii8+CiAgICAgIDwhLS0gUmlnaHQgcGxhdGUgLS0+CiAgICAgIDxyZWN0IHg9IjQyIiB5PSItOSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjE4IiByeD0iMyIgZmlsbD0idXJsKCNkYkdyYWQpIiBzdHJva2U9IiM0YTU1NjgiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgICA8cmVjdCB4PSI1MSIgeT0iLTciIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9IiM2M2IzZWQiIHN0cm9rZT0iIzJiNmNiMCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8L2c+CiAgICA8IS0tIFJpZ2h0IGR1bWJiZWxsIChyb3RhdGVkICszNWRlZykgLS0+CiAgICA8ZyB0cmFuc2Zvcm09InJvdGF0ZSgzNSkiPgogICAgICA8IS0tIExlZnQgcGxhdGUgLS0+CiAgICAgIDxyZWN0IHg9Ii01MiIgeT0iLTkiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxOCIgcng9IjMiIGZpbGw9InVybCgjZGJHcmFkKSIgc3Ryb2tlPSIjNGE1NTY4IiBzdHJva2Utd2lkdGg9IjEiLz4KICAgICAgPHJlY3QgeD0iLTYyIiB5PSItNyIgd2lkdGg9IjExIiBoZWlnaHQ9IjE0IiByeD0iMiIgZmlsbD0iIzYzYjNlZCIgc3Ryb2tlPSIjMmI2Y2IwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgICAgPCEtLSBCYXIgLS0+CiAgICAgIDxyZWN0IHg9Ii00MiIgeT0iLTQiIHdpZHRoPSI4NCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0idXJsKCNkYkdyYWQpIiBzdHJva2U9IiM3MTgwOTYiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgICA8IS0tIEJhciBzaGluZSAtLT4KICAgICAgPHJlY3QgeD0iLTQwIiB5PSItMiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjMiIHJ4PSIyIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC41Ii8+CiAgICAgIDwhLS0gUmlnaHQgcGxhdGUgLS0+CiAgICAgIDxyZWN0IHg9IjQyIiB5PSItOSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjE4IiByeD0iMyIgZmlsbD0idXJsKCNkYkdyYWQpIiBzdHJva2U9IiM0YTU1NjgiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgICA8cmVjdCB4PSI1MSIgeT0iLTciIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9IiM2M2IzZWQiIHN0cm9rZT0iIzJiNmNiMCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8L2c+CiAgICA8IS0tIENlbnRlciBjcm9zcyBoaWdobGlnaHQgZG90IC0tPgogICAgPGNpcmNsZSBjeD0iMCIgY3k9IjAiIHI9IjUiIGZpbGw9IiM2M2IzZWQiIG9wYWNpdHk9IjAuOCIvPgogIDwvZz4KCiAgPCEtLSDilIDilIAgT1VURVIgU0hJRUxEIEFDQ0VOVCBMSU5FUyDilIDilIAgLS0+CiAgPCEtLSBUb3AgcG9pbnQgYWNjZW50IC0tPgogIDxsaW5lIHgxPSIyMzAiIHkxPSIxOCIgeDI9IjI3MCIgeTI9IjE4IiBzdHJva2U9IiM2M2IzZWQiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC41Ii8+CiAgPCEtLSBTaWRlIGFjY2VudHMgLS0+CiAgPGxpbmUgeDE9IjcyIiB5MT0iMTQwIiB4Mj0iODIiIHkyPSIxNDUiIHN0cm9rZT0iIzYzYjNlZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuNCIvPgogIDxsaW5lIHgxPSI0MjgiIHkxPSIxNDAiIHgyPSI0MTgiIHkyPSIxNDUiIHN0cm9rZT0iIzYzYjNlZCIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuNCIvPgoKPC9zdmc+Cg==">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="EronFit">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --card: #1c1c1c;
+  --card2: #242424;
+  --border: #2a2a2a;
+  --accent: #e8ff47;
+  --accent2: #ff6b35;
+  --blue: #64b4ff;
+  --green: #4fffb0;
+  --red: #ff4f4f;
+  --text: #f0f0f0;
+  --muted: #666;
+  --muted2: #444;
+  --nav-h: 68px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── LAYOUT ── */
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+#screen {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* ── NAV ── */
+nav {
+  display: flex;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding-bottom: var(--safe-bottom);
+  flex-shrink: 0;
+  z-index: 100;
+}
+
+.nav-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 4px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s;
+  gap: 4px;
+}
+
+.nav-btn svg { width: 22px; height: 22px; stroke-width: 1.8; }
+.nav-btn.active { color: var(--accent); }
+.nav-btn.active svg { filter: drop-shadow(0 0 6px rgba(232,255,71,0.5)); }
+
+/* ── PAGES ── */
+.page { display: none; padding: 20px 16px 100px; min-height: 100%; }
+.page.active { display: block; }
+
+/* ── TYPOGRAPHY ── */
+.bebas { font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; }
+
+/* ── HOME PAGE ── */
+.home-header {
+  padding: 24px 0 20px;
+  position: relative;
+}
+
+.greeting {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  letter-spacing: 3px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.date-str {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.stat-val {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+.today-banner {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 14px;
+}
+
+.banner-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.banner-main {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+.banner-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.progress-bar-wrap {
+  margin-top: 12px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.progress-bar {
+  height: 6px;
+  background: var(--border);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 0.4s ease;
+}
+
+.progress-fill.green { background: var(--accent); }
+.progress-fill.orange { background: var(--accent2); }
+
+.quick-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.quick-btn:active { transform: scale(0.98); opacity: 0.85; }
+.quick-btn.primary { background: var(--accent); color: #000; }
+.quick-btn.secondary { background: var(--card); color: var(--text); border: 1px solid var(--border); }
+
+.cheat-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.toggle-label { font-size: 14px; font-weight: 500; }
+.toggle-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+.toggle {
+  position: relative;
+  width: 48px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.toggle input { opacity: 0; width: 0; height: 0; }
+
+.toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: var(--border);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 20px; height: 20px;
+  left: 3px; top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.toggle input:checked + .toggle-slider { background: var(--accent2); }
+.toggle input:checked + .toggle-slider::before { transform: translateX(22px); }
+
+/* ── SECTION HEADERS ── */
+.section-hdr {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin: 24px 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-hdr::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── MEAL CARDS ── */
+.meal-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.meal-card.done { border-color: rgba(232,255,71,0.3); }
+
+.meal-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.meal-check {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  background: none;
+  cursor: pointer;
+}
+
+.meal-card.done .meal-check {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.meal-check svg { width: 14px; height: 14px; stroke: #000; display: none; }
+.meal-card.done .meal-check svg { display: block; }
+
+.meal-info { flex: 1; }
+.meal-name-text { font-size: 15px; font-weight: 600; }
+.meal-time-text { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+.meal-macros-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 0 16px 12px;
+}
+
+.m-tag {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.m-tag.p { background: rgba(232,255,71,0.1); color: var(--accent); border: 1px solid rgba(232,255,71,0.2); }
+.m-tag.c { background: rgba(255,107,53,0.1); color: var(--accent2); border: 1px solid rgba(255,107,53,0.2); }
+.m-tag.k { background: rgba(100,180,255,0.1); color: var(--blue); border: 1px solid rgba(100,180,255,0.2); }
+
+.meal-items-list {
+  padding: 0 16px 14px;
+  display: none;
+}
+
+.meal-card.expanded .meal-items-list { display: block; }
+
+.meal-items-list li {
+  font-size: 13px;
+  color: #bbb;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+  list-style: none;
+  display: flex;
+  gap: 8px;
+}
+
+.meal-items-list li::before { content: '→'; color: var(--accent); font-size: 11px; flex-shrink: 0; margin-top: 2px; }
+.meal-items-list li:last-child { border-bottom: none; }
+
+/* ── WORKOUT CARDS ── */
+.ex-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.ex-card.done { border-color: rgba(232,255,71,0.3); }
+
+.ex-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.ex-num-badge {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  color: var(--muted2);
+  width: 26px;
+  flex-shrink: 0;
+}
+
+.ex-card.done .ex-num-badge { color: var(--accent); }
+
+.ex-info { flex: 1; }
+.ex-name { font-size: 14px; font-weight: 600; }
+.ex-sets-text { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+.ex-done-check {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: none;
+}
+
+.ex-card.done .ex-done-check { background: var(--accent); border-color: var(--accent); }
+.ex-done-check svg { width: 14px; height: 14px; stroke: #000; display: none; }
+.ex-card.done .ex-done-check svg { display: block; }
+
+.ex-body {
+  padding: 0 16px 14px;
+  display: none;
+  border-top: 1px solid var(--border);
+}
+
+.ex-card.expanded .ex-body { display: block; }
+
+.ex-note-text {
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+  padding: 10px 0 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.sets-table { width: 100%; }
+
+.sets-table-header {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr 40px;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  padding: 0 4px;
+}
+
+.set-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr 40px;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.set-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.set-input {
+  background: var(--card2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 10px;
+  width: 100%;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.set-input:focus { outline: none; border-color: var(--accent); }
+
+.set-done-btn {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+  margin: 0 auto;
+}
+
+.set-done-btn.logged { background: var(--accent); border-color: var(--accent); }
+.set-done-btn svg { width: 14px; height: 14px; stroke: #000; }
+
+.add-set-btn {
+  width: 100%;
+  padding: 8px;
+  background: none;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.add-set-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── PROGRESS PAGE ── */
+.progress-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.p-tab {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.p-tab.active { background: var(--card2); color: var(--text); }
+
+.p-tab-content { display: none; }
+.p-tab-content.active { display: block; }
+
+.weight-input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.big-input {
+  flex: 1;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 14px 16px;
+  text-align: center;
+}
+
+.big-input:focus { outline: none; border-color: var(--accent); }
+
+.log-btn {
+  padding: 14px 20px;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.log-btn:active { opacity: 0.8; }
+
+/* Simple SVG Chart */
+.chart-wrap {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.chart-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.chart-svg { width: 100%; overflow: visible; }
+
+.lift-select {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  appearance: none;
+}
+
+.lift-select:focus { outline: none; border-color: var(--accent); }
+
+.log-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.log-entry:last-child { border-bottom: none; }
+.log-date { color: var(--muted); font-size: 12px; }
+.log-val { font-weight: 600; color: var(--accent); }
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.empty-state div { font-size: 32px; margin-bottom: 12px; }
+
+/* ── SETTINGS PAGE ── */
+.settings-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.settings-row:last-child { border-bottom: none; }
+.settings-row:active { background: var(--card2); }
+
+.settings-row-label { font-size: 14px; font-weight: 500; }
+.settings-row-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.settings-row-arrow { color: var(--muted); font-size: 18px; }
+
+.danger-btn {
+  width: 100%;
+  padding: 16px;
+  background: rgba(255,79,79,0.1);
+  border: 1px solid rgba(255,79,79,0.3);
+  border-radius: 14px;
+  color: var(--red);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.danger-btn:active { background: rgba(255,79,79,0.2); }
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 200;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.modal-overlay.open { display: flex; }
+
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px 20px 0 0;
+  padding: 20px 20px calc(20px + var(--safe-bottom));
+  width: 100%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.modal-handle {
+  width: 40px; height: 4px;
+  background: var(--border);
+  border-radius: 100px;
+  margin: 0 auto 20px;
+}
+
+.modal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.modal-close {
+  float: right;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 32px; height: 32px;
+  color: var(--text);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: -4px;
+}
+
+textarea.edit-area {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  padding: 12px;
+  min-height: 200px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+textarea.edit-area:focus { outline: none; border-color: var(--accent); }
+
+.save-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+/* ── STREAK FIRE ── */
+.streak-display {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 8px 16px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.streak-fire { font-size: 20px; }
+.streak-num { font-family: 'Bebas Neue', sans-serif; font-size: 22px; color: var(--accent2); }
+.streak-text { font-size: 12px; color: var(--muted); letter-spacing: 0.5px; }
+
+/* ── REST DAY ── */
+.rest-day-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 20px;
+  text-align: center;
+}
+
+.rest-day-emoji { font-size: 48px; margin-bottom: 12px; }
+.rest-day-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 3px; color: var(--accent); }
+.rest-day-sub { font-size: 14px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page.active { animation: fadeUp 0.25s ease; }
+
+.check-pop {
+  animation: checkPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes checkPop {
+  from { transform: scale(0.7); }
+  to { transform: scale(1); }
+}
+
+/* ── INSTALL BANNER ── */
+.install-banner {
+  background: linear-gradient(135deg, rgba(232,255,71,0.1), rgba(255,107,53,0.1));
+  border: 1px solid rgba(232,255,71,0.3);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.install-banner-text { flex: 1; font-size: 13px; color: #ccc; line-height: 1.4; }
+.install-banner-text b { color: var(--accent); }
+.install-dismiss { background: none; border: none; color: var(--muted); font-size: 18px; cursor: pointer; padding: 4px; }
+
+/* ── CHEAT DAY ITEMS ── */
+.cheat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  color: #ccc;
+}
+.cheat-item:last-child { border-bottom: none; }
+.cheat-item::before { content: '→'; color: var(--accent2); flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<div id="app">
+  <div id="screen">
+
+    <!-- HOME -->
+    <div class="page active" id="page-home">
+      <div class="home-header">
+        <div class="greeting" id="greeting-text">GOOD MORNING,<br>ERON</div>
+        <div class="date-str" id="date-str"></div>
+      </div>
+
+      <div id="install-banner" class="install-banner">
+        <div class="install-banner-text">📱 <b>Install as App:</b> Tap Share → "Add to Home Screen" in Safari to use like a real app</div>
+        <button class="install-dismiss" onclick="dismissInstall()">×</button>
+      </div>
+
+      <div class="streak-display">
+        <span class="streak-fire">🔥</span>
+        <span class="streak-num" id="streak-num">0</span>
+        <span class="streak-text">day streak</span>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="stat-val" id="stat-meals" style="color:var(--accent)">0/0</div>
+          <div class="stat-label">Meals</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="stat-exercises" style="color:var(--blue)">0/0</div>
+          <div class="stat-label">Exercises</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="stat-weight" style="color:var(--accent2)">—</div>
+          <div class="stat-label">lbs</div>
+        </div>
+      </div>
+
+      <!-- Today's workout banner -->
+      <div class="today-banner" id="today-workout-banner">
+        <div class="banner-title">Today's Workout</div>
+        <div class="banner-main" id="today-workout-name">REST DAY</div>
+        <div class="banner-sub" id="today-workout-sub"></div>
+        <div class="progress-bar-wrap" id="workout-progress-wrap" style="display:none">
+          <div class="progress-label">
+            <span>Progress</span>
+            <span id="workout-progress-pct">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill green" id="workout-progress-fill" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Today's meal banner -->
+      <div class="today-banner">
+        <div class="banner-title">Today's Meals</div>
+        <div class="banner-main" id="today-meal-summary">4 meals planned</div>
+        <div class="progress-bar-wrap">
+          <div class="progress-label">
+            <span>Meals eaten</span>
+            <span id="meal-progress-pct">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill orange" id="meal-progress-fill" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cheat-toggle-row">
+        <div>
+          <div class="toggle-label">🍕 Cheat Day</div>
+          <div class="toggle-sub">Swap meal plan for cheat day guide</div>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="cheat-toggle" onchange="toggleCheatDay()">
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+
+      <button class="quick-btn primary" onclick="goTo('meals')">View Today's Meals →</button>
+      <button class="quick-btn secondary" onclick="goTo('workout')">View Today's Workout →</button>
+    </div>
+
+    <!-- MEALS -->
+    <div class="page" id="page-meals">
+      <div class="section-hdr bebas" style="margin-top:8px;">Today's Meals</div>
+      <div id="meals-container"></div>
+    </div>
+
+    <!-- WORKOUT -->
+    <div class="page" id="page-workout">
+      <div class="section-hdr bebas" style="margin-top:8px;" id="workout-page-title">Today's Workout</div>
+      <div id="workout-container"></div>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="page" id="page-progress">
+      <div class="section-hdr bebas" style="margin-top:8px;">Progress</div>
+
+      <div class="progress-tabs">
+        <button class="p-tab active" onclick="switchProgressTab('weight')">Bodyweight</button>
+        <button class="p-tab" onclick="switchProgressTab('lifts')">Lifts</button>
+      </div>
+
+      <!-- Bodyweight tab -->
+      <div class="p-tab-content active" id="ptab-weight">
+        <div class="weight-input-row">
+          <input type="number" class="big-input" id="weight-input" placeholder="160.0" step="0.1">
+          <button class="log-btn" onclick="logWeight()">LOG</button>
+        </div>
+        <div class="chart-wrap">
+          <div class="chart-title">BODYWEIGHT TREND</div>
+          <svg class="chart-svg" id="weight-chart" height="120" viewBox="0 0 300 120"></svg>
+          <div id="weight-chart-empty" class="empty-state" style="display:none">
+            <div>⚖️</div>Log your weight to see your trend
+          </div>
+        </div>
+        <div class="chart-wrap">
+          <div class="chart-title">LOG HISTORY</div>
+          <div id="weight-log-list"></div>
+        </div>
+      </div>
+
+      <!-- Lifts tab -->
+      <div class="p-tab-content" id="ptab-lifts">
+        <select class="lift-select" id="lift-select" onchange="renderLiftChart()">
+          <option value="">Select an exercise...</option>
+          <optgroup label="Push">
+            <option value="Flat Barbell Bench Press">Flat Barbell Bench Press</option>
+            <option value="Overhead Press">Overhead Press</option>
+            <option value="Incline Dumbbell Press">Incline Dumbbell Press</option>
+            <option value="Cable Lateral Raises">Cable Lateral Raises</option>
+            <option value="Tricep Rope Pushdown">Tricep Rope Pushdown</option>
+            <option value="Overhead Tricep Extension">Overhead Tricep Extension</option>
+          </optgroup>
+          <optgroup label="Pull">
+            <option value="Barbell Row">Barbell Row</option>
+            <option value="Lat Pulldown">Lat Pulldown</option>
+            <option value="Seated Cable Row">Seated Cable Row</option>
+            <option value="Face Pulls">Face Pulls</option>
+            <option value="Barbell Curl">Barbell Curl</option>
+            <option value="Hammer Curls">Hammer Curls</option>
+          </optgroup>
+          <optgroup label="Legs">
+            <option value="Barbell Back Squat">Barbell Back Squat</option>
+            <option value="Romanian Deadlift">Romanian Deadlift</option>
+            <option value="Leg Press">Leg Press</option>
+            <option value="Leg Curl">Leg Curl</option>
+            <option value="Leg Extension">Leg Extension</option>
+            <option value="Standing Calf Raise">Standing Calf Raise</option>
+          </optgroup>
+        </select>
+
+        <div class="chart-wrap" id="lift-chart-wrap">
+          <div class="chart-title" id="lift-chart-title">SELECT AN EXERCISE</div>
+          <svg class="chart-svg" id="lift-chart" height="120" viewBox="0 0 300 120"></svg>
+          <div id="lift-chart-empty" class="empty-state">
+            <div>💪</div>Select an exercise to see your progress
+          </div>
+        </div>
+
+        <div class="chart-wrap" id="lift-log-wrap" style="display:none">
+          <div class="chart-title">BEST SET PER SESSION</div>
+          <div id="lift-log-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="page" id="page-settings">
+      <div class="section-hdr bebas" style="margin-top:8px;">Settings</div>
+
+      <div class="settings-section">
+        <div class="settings-row" onclick="openModal('edit-meals')">
+          <div>
+            <div class="settings-row-label">Edit Meal Plan</div>
+            <div class="settings-row-sub">Customize your meals</div>
+          </div>
+          <div class="settings-row-arrow">›</div>
+        </div>
+        <div class="settings-row" onclick="openModal('edit-workout')">
+          <div>
+            <div class="settings-row-label">Edit Workout Plan</div>
+            <div class="settings-row-sub">Modify exercises, sets & reps</div>
+          </div>
+          <div class="settings-row-arrow">›</div>
+        </div>
+        <div class="settings-row" onclick="openModal('edit-startdate')">
+          <div>
+            <div class="settings-row-label">Start Date</div>
+            <div class="settings-row-sub" id="startdate-display"></div>
+          </div>
+          <div class="settings-row-arrow">›</div>
+        </div>
+      </div>
+
+      <div class="settings-section">
+        <div class="settings-row" onclick="openModal('install-instructions')">
+          <div>
+            <div class="settings-row-label">📱 Install as App</div>
+            <div class="settings-row-sub">Add to your home screen</div>
+          </div>
+          <div class="settings-row-arrow">›</div>
+        </div>
+        <div class="settings-row" onclick="openModal('about')">
+          <div>
+            <div class="settings-row-label">About EronFit</div>
+            <div class="settings-row-sub">Version 1.0 · Built by Claude</div>
+          </div>
+          <div class="settings-row-arrow">›</div>
+        </div>
+      </div>
+
+      <button class="danger-btn" onclick="confirmReset()">Reset Today's Progress</button>
+      <button class="danger-btn" style="margin-top:8px;" onclick="confirmFullReset()">Reset All Data</button>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <nav>
+    <button class="nav-btn active" id="nav-home" onclick="goTo('home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12L12 3l9 9"/><path d="M9 21V12h6v9"/></svg>
+      Home
+    </button>
+    <button class="nav-btn" id="nav-meals" onclick="goTo('meals')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      Meals
+    </button>
+    <button class="nav-btn" id="nav-workout" onclick="goTo('workout')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 4v16M18 4v16M2 8h4M18 8h4M2 16h4M18 16h4"/></svg>
+      Workout
+    </button>
+    <button class="nav-btn" id="nav-progress" onclick="goTo('progress')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Progress
+    </button>
+    <button class="nav-btn" id="nav-settings" onclick="goTo('settings')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      Settings
+    </button>
+  </nav>
+</div>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal" id="modal-box">
+    <div class="modal-handle"></div>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════
+// DATA
+// ══════════════════════════════════════════
+
+const START_DATE = new Date('2026-04-06'); // Monday
+
+const DEFAULT_MEALS = {
+  standard: [
+    {
+      id: 'shake', name: '🥤 Morning Shake', time: '6:30–7:30am',
+      protein: '50g', cal: '500 cal', carbs: '',
+      items: ['2 scoops GreenWise Whey in 1.5 cups whole milk','1 banana','1 tbsp peanut butter (optional)'],
+      note: 'Gym days: half before, half after. Rest days: drink at 7am.'
+    },
+    {
+      id: 'lunch', name: '🍱 Lunch — Beef & Rice Bowl', time: '12:00pm',
+      protein: '60g', cal: '700 cal', carbs: '60g carbs',
+      items: ['200g ground beef (80/20), salt, garlic powder, pepper','1 cup cooked white rice','2 hard boiled eggs','Shredded cheese + hot sauce'],
+      note: 'Prepped Sunday. Microwave on lunch break.'
+    },
+    {
+      id: 'snack', name: '🧀 Afternoon Snack', time: '3:00–4:00pm',
+      protein: '30g', cal: '300 cal', carbs: '',
+      items: ['1 cup full fat Greek yogurt (Chobani or Fage)','Beef jerky or string cheese if still hungry'],
+      note: 'Keep in your bag. Zero prep.'
+    },
+    {
+      id: 'dinner', name: '🌮 Dinner — Beef Taco Bowl', time: 'Evening',
+      protein: '65g', cal: '750 cal', carbs: '65g carbs',
+      items: ['200g ground beef with taco seasoning','1 cup white rice','½ cup black beans','Shredded cheese + salsa','Sour cream on the side (optional)'],
+      note: 'Alternate with Buffalo Chicken Bowl every other day.',
+      isDinner: true
+    }
+  ],
+  cheat: [
+    { id: 'cheat1', name: '✅ Best Cheat Picks', items: ['Chipotle double protein bowl','Burgers — double patty go nuts','Carne asada plate with rice and beans','Wings, pizza, whatever — one bad meal won\'t derail you','Sushi — solid protein, great option'] },
+    { id: 'cheat2', name: '🍺 Drinking Days', items: ['Eat high protein before you drink — always','Light beer, spirits + soda water, hard seltzers','Avoid sugary cocktails','Drink water between drinks','You\'re 23, enjoy your weekends'] },
+    { id: 'cheat3', name: '🧠 The Mindset', items: ['One cheat meal doesn\'t undo a week of good eating','One cheat day doesn\'t undo a month of training','Just get back on track the next morning','Hit your protein most days and everything else is details'] }
+  ]
+};
+
+const DINNER_ROTATION = [
+  { id: 'dinner-taco', name: '🌮 Dinner — Beef Taco Bowl', time: 'Evening', protein: '65g', cal: '750 cal', carbs: '65g carbs',
+    items: ['200g ground beef with taco seasoning','1 cup white rice','½ cup black beans','Shredded cheese + salsa','Sour cream on the side (optional)'], note: 'Grab from fridge, microwave when ready.' },
+  { id: 'dinner-buffalo', name: '🔥 Dinner — Buffalo Chicken Bowl', time: 'Evening', protein: '70g', cal: '700 cal', carbs: '55g carbs',
+    items: ['250g shredded chicken breast in Frank\'s RedHot','1 cup white rice','Shredded cheese melted on top','Ranch dressing drizzle on the side'], note: 'Grab from fridge, microwave when ready.' }
+];
+
+const DEFAULT_WORKOUTS = {
+  push: {
+    name: 'PUSH DAY', sub: 'Chest · Shoulders · Triceps',
+    exercises: [
+      { id: 'bench', name: 'Flat Barbell Bench Press', sets: 4, reps: '6–8', rest: '90s', note: 'Primary chest builder. Controlled descent, touch chest, drive up explosively.' },
+      { id: 'ohp', name: 'Overhead Press', sets: 3, reps: '8–10', rest: '90s', note: 'Seated or standing. Hits front delts, builds shoulder width.' },
+      { id: 'incline', name: 'Incline Dumbbell Press', sets: 3, reps: '10–12', rest: '60s', note: '30–45° bench. Upper chest development.' },
+      { id: 'lateral', name: 'Cable Lateral Raises', sets: 3, reps: '15–20', rest: '60s', note: 'Constant tension. Light weight, strict form, slow movement.' },
+      { id: 'pushdown', name: 'Tricep Rope Pushdown', sets: 3, reps: '12–15', rest: '60s', note: 'Squeeze at bottom, spread rope at full extension.' },
+      { id: 'triext', name: 'Overhead Tricep Extension', sets: 3, reps: '12–15', rest: '60s', note: 'Hits long head. One dumbbell overhead, elbows tight.' }
+    ]
+  },
+  pull: {
+    name: 'PULL DAY', sub: 'Back · Biceps · Rear Delts',
+    exercises: [
+      { id: 'row', name: 'Barbell Row', sets: 4, reps: '6–8', rest: '90s', note: 'Primary back builder. Pull to lower chest/belly button. Drive elbows back.' },
+      { id: 'pulldown', name: 'Lat Pulldown (Wide Grip)', sets: 3, reps: '10–12', rest: '90s', note: 'Builds lat width. Pull to upper chest, lean back slightly.' },
+      { id: 'cablerow', name: 'Seated Cable Row', sets: 3, reps: '10–12', rest: '60s', note: 'Mid back thickness. Hold 1 sec squeeze at end of each rep.' },
+      { id: 'facepull', name: 'Face Pulls', sets: 3, reps: '15–20', rest: '60s', note: 'Rear delts + rotator cuff health. Cable at face height, pull to ears.' },
+      { id: 'curl', name: 'Barbell Curl', sets: 3, reps: '10–12', rest: '60s', note: 'Keep elbows pinned. Supinate wrist as you curl.' },
+      { id: 'hammer', name: 'Hammer Curls', sets: 3, reps: '12–15', rest: '60s', note: 'Neutral grip. Thick full arm look from every angle.' }
+    ]
+  },
+  legs: {
+    name: 'LEG DAY', sub: 'Quads · Hamstrings · Glutes · Calves',
+    exercises: [
+      { id: 'squat', name: 'Barbell Back Squat', sets: 4, reps: '6–8', rest: '2 min', note: 'King of all exercises. Break parallel, drive through heels, chest up.' },
+      { id: 'rdl', name: 'Romanian Deadlift', sets: 3, reps: '10–12', rest: '90s', note: 'Hinge at hips, soft knee bend, feel the hamstring stretch at bottom.' },
+      { id: 'legpress', name: 'Leg Press', sets: 3, reps: '10–12', rest: '90s', note: 'Quad volume without spinal load. Don\'t lock knees. Go deep.' },
+      { id: 'legcurl', name: 'Leg Curl', sets: 3, reps: '12–15', rest: '60s', note: 'Control the weight on the way back. Slow eccentric builds more muscle.' },
+      { id: 'legext', name: 'Leg Extension', sets: 3, reps: '15', rest: '60s', note: 'Squeeze hard at the top of every rep.' },
+      { id: 'calf', name: 'Standing Calf Raise', sets: 4, reps: '15–20', rest: '45s', note: 'Full range of motion. Pause 1 second at the top.' }
+    ]
+  }
+};
+
+// ══════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════
+
+let state = loadState();
+
+function loadState() {
+  try {
+    const s = localStorage.getItem('eronfit_v1');
+    if (s) return JSON.parse(s);
+  } catch(e) {}
+  return {
+    startDate: START_DATE.toISOString(),
+    cheatDay: false,
+    mealsDone: {},      // { 'YYYY-MM-DD': { mealId: true } }
+    exDone: {},         // { 'YYYY-MM-DD': { exId: true } }
+    setLogs: {},        // { 'YYYY-MM-DD': { exId: [ {weight, reps, logged} ] } }
+    weightLog: [],      // [ {date, weight} ]
+    liftHistory: {},    // { exName: [ {date, bestWeight, bestReps} ] }
+    streak: 0,
+    lastActiveDate: null,
+    installDismissed: false,
+    workouts: null,
+    meals: null
+  };
+}
+
+function saveState() {
+  try { localStorage.setItem('eronfit_v1', JSON.stringify(state)); } catch(e) {}
+}
+
+function getWorkouts() { return state.workouts || DEFAULT_WORKOUTS; }
+function getMeals() { return state.meals || DEFAULT_MEALS; }
+
+// ══════════════════════════════════════════
+// DATE HELPERS
+// ══════════════════════════════════════════
+
+function todayStr() {
+  return new Date().toISOString().slice(0,10);
+}
+
+function getDayType() {
+  const now = new Date();
+  const day = now.getDay(); // 0=Sun,1=Mon,2=Tue,3=Wed,4=Thu,5=Fri,6=Sat
+  if (day === 1) return 'push';
+  if (day === 3) return 'pull';
+  if (day === 5) return 'legs';
+  if (day === 6) return 'bike';
+  if (day === 0) return 'cook';
+  return 'rest';
+}
+
+function getDinnerForDay() {
+  // Auto-rotate based on days since start
+  const start = new Date(state.startDate);
+  const now = new Date();
+  const diff = Math.floor((now - start) / (1000*60*60*24));
+  return DINNER_ROTATION[diff % 2];
+}
+
+function getMealsForToday() {
+  const meals = getMeals();
+  const base = meals.standard.filter(m => !m.isDinner);
+  const dinner = getDinnerForDay();
+  return [...base, dinner];
+}
+
+// ══════════════════════════════════════════
+// NAVIGATION
+// ══════════════════════════════════════════
+
+function goTo(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.getElementById('nav-' + page).classList.add('active');
+  document.getElementById('screen').scrollTop = 0;
+
+  if (page === 'home') renderHome();
+  if (page === 'meals') renderMeals();
+  if (page === 'workout') renderWorkout();
+  if (page === 'progress') renderProgress();
+  if (page === 'settings') renderSettings();
+}
+
+// ══════════════════════════════════════════
+// HOME
+// ══════════════════════════════════════════
+
+function renderHome() {
+  const now = new Date();
+  const hour = now.getHours();
+  let greet = hour < 12 ? 'GOOD MORNING,' : hour < 17 ? 'GOOD AFTERNOON,' : 'GOOD EVENING,';
+  document.getElementById('greeting-text').textContent = greet + '\nERON';
+  document.getElementById('date-str').textContent = now.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' }).toUpperCase();
+
+  // Install banner
+  if (state.installDismissed) {
+    const b = document.getElementById('install-banner');
+    if (b) b.style.display = 'none';
+  }
+
+  // Streak
+  updateStreak();
+  document.getElementById('streak-num').textContent = state.streak;
+
+  // Stats
+  const today = todayStr();
+  const todayMeals = getMealsForToday();
+  const mealsDone = Object.keys(state.mealsDone[today] || {}).filter(k => state.mealsDone[today][k]).length;
+  document.getElementById('stat-meals').textContent = mealsDone + '/' + todayMeals.length;
+
+  const dayType = getDayType();
+  const workout = getWorkouts()[dayType];
+  if (workout) {
+    const exs = workout.exercises;
+    const exDone = Object.keys(state.exDone[today] || {}).filter(k => state.exDone[today][k]).length;
+    document.getElementById('stat-exercises').textContent = exDone + '/' + exs.length;
+    document.getElementById('today-workout-name').textContent = workout.name;
+    document.getElementById('today-workout-sub').textContent = workout.sub;
+    document.getElementById('workout-progress-wrap').style.display = 'block';
+    const pct = exs.length ? Math.round(exDone/exs.length*100) : 0;
+    document.getElementById('workout-progress-fill').style.width = pct + '%';
+    document.getElementById('workout-progress-pct').textContent = pct + '%';
+  } else {
+    document.getElementById('stat-exercises').textContent = '—';
+    document.getElementById('today-workout-name').textContent = dayType === 'bike' ? '🏔️ MOUNTAIN BIKE DAY' : dayType === 'cook' ? '🍳 COOK DAY' : 'REST DAY';
+    document.getElementById('today-workout-sub').textContent = dayType === 'bike' ? 'Enjoy the ride — active recovery' : dayType === 'cook' ? 'Prep your week on Sunday' : 'Recover, eat well, sleep';
+    document.getElementById('workout-progress-wrap').style.display = 'none';
+  }
+
+  const mealPct = todayMeals.length ? Math.round(mealsDone/todayMeals.length*100) : 0;
+  document.getElementById('meal-progress-fill').style.width = mealPct + '%';
+  document.getElementById('meal-progress-pct').textContent = mealPct + '%';
+  document.getElementById('today-meal-summary').textContent = todayMeals.length + ' meals planned';
+
+  // Latest weight
+  const wl = state.weightLog;
+  document.getElementById('stat-weight').textContent = wl.length ? wl[wl.length-1].weight : '—';
+
+  // Cheat toggle
+  document.getElementById('cheat-toggle').checked = state.cheatDay;
+}
+
+function updateStreak() {
+  const today = todayStr();
+  if (state.lastActiveDate === today) return;
+  const yesterday = new Date(); yesterday.setDate(yesterday.getDate()-1);
+  const yesterdayStr = yesterday.toISOString().slice(0,10);
+  if (state.lastActiveDate === yesterdayStr) {
+    state.streak = (state.streak||0) + 1;
+  } else if (state.lastActiveDate !== today) {
+    // Only reset if they missed a gym day
+    const missed = getDayTypeForDate(new Date(yesterdayStr));
+    if (['push','pull','legs'].includes(missed)) state.streak = 0;
+  }
+  state.lastActiveDate = today;
+  saveState();
+}
+
+function getDayTypeForDate(d) {
+  const day = d.getDay();
+  if (day===1) return 'push';
+  if (day===3) return 'pull';
+  if (day===5) return 'legs';
+  return 'rest';
+}
+
+function toggleCheatDay() {
+  state.cheatDay = document.getElementById('cheat-toggle').checked;
+  saveState();
+  renderHome();
+}
+
+function dismissInstall() {
+  state.installDismissed = true;
+  saveState();
+  document.getElementById('install-banner').style.display = 'none';
+}
+
+// ══════════════════════════════════════════
+// MEALS
+// ══════════════════════════════════════════
+
+function renderMeals() {
+  const container = document.getElementById('meals-container');
+  const today = todayStr();
+  const meals = getMeals();
+
+  if (state.cheatDay) {
+    container.innerHTML = `
+      <div style="background:rgba(255,107,53,0.1);border:1px solid rgba(255,107,53,0.3);border-radius:14px;padding:14px 16px;margin-bottom:16px;font-size:13px;color:#ccc;">
+        🍕 <b style="color:var(--accent2)">Cheat Day Active</b> — Enjoy yourself, just stay protein-focused where you can.
+      </div>
+    `;
+    meals.cheat.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'meal-card';
+      div.innerHTML = `
+        <div class="meal-card-header" style="cursor:default">
+          <div class="meal-info">
+            <div class="meal-name-text">${item.name}</div>
+          </div>
+        </div>
+        <div class="meal-items-list" style="display:block">
+          ${item.items.map(i => `<li>${i}</li>`).join('')}
+        </div>
+      `;
+      container.appendChild(div);
+    });
+    return;
+  }
+
+  const todayMeals = getMealsForToday();
+  container.innerHTML = '';
+
+  todayMeals.forEach((meal, idx) => {
+    const done = !!(state.mealsDone[today] && state.mealsDone[today][meal.id]);
+    const div = document.createElement('div');
+    div.className = 'meal-card' + (done ? ' done' : '');
+    div.id = 'meal-' + meal.id;
+    div.innerHTML = `
+      <div class="meal-card-header" onclick="toggleMealExpand('${meal.id}')">
+        <div class="meal-check" onclick="toggleMeal(event,'${meal.id}')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="meal-info">
+          <div class="meal-name-text">${meal.name}</div>
+          <div class="meal-time-text">${meal.time}</div>
+        </div>
+      </div>
+      <div class="meal-macros-row">
+        ${meal.protein ? `<span class="m-tag p">~${meal.protein} protein</span>` : ''}
+        ${meal.cal ? `<span class="m-tag c">${meal.cal}</span>` : ''}
+        ${meal.carbs ? `<span class="m-tag k">${meal.carbs}</span>` : ''}
+      </div>
+      <div class="meal-items-list">
+        ${meal.items.map(i => `<li>${i}</li>`).join('')}
+        ${meal.note ? `<div style="margin-top:8px;font-size:12px;color:var(--muted);font-style:italic;">${meal.note}</div>` : ''}
+      </div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function toggleMealExpand(id) {
+  const card = document.getElementById('meal-' + id);
+  if (card) card.classList.toggle('expanded');
+}
+
+function toggleMeal(e, id) {
+  e.stopPropagation();
+  const today = todayStr();
+  if (!state.mealsDone[today]) state.mealsDone[today] = {};
+  state.mealsDone[today][id] = !state.mealsDone[today][id];
+  saveState();
+  renderMeals();
+  renderHome();
+}
+
+// ══════════════════════════════════════════
+// WORKOUT
+// ══════════════════════════════════════════
+
+function renderWorkout() {
+  const container = document.getElementById('workout-container');
+  const title = document.getElementById('workout-page-title');
+  const today = todayStr();
+  const dayType = getDayType();
+  const workouts = getWorkouts();
+  const workout = workouts[dayType];
+
+  if (!workout) {
+    const msgs = {
+      bike: { icon:'🏔️', t:'Mountain Bike Day', s:'Get out there and enjoy the ride. Active recovery.' },
+      cook: { icon:'🍳', t:'Sunday Cook Day', s:'~2 hours of prep = a whole week sorted. Put on a podcast and get it done.' },
+      rest: { icon:'😴', t:'Rest Day', s:'Recover hard. Sleep well. Eat your protein. Your muscles grow on rest days.' }
+    };
+    const m = msgs[dayType] || msgs.rest;
+    title.textContent = "Today's Workout";
+    container.innerHTML = `
+      <div class="rest-day-card">
+        <div class="rest-day-emoji">${m.icon}</div>
+        <div class="rest-day-title">${m.t}</div>
+        <div class="rest-day-sub">${m.s}</div>
+      </div>
+    `;
+    return;
+  }
+
+  title.textContent = workout.name;
+  container.innerHTML = `<div style="font-size:13px;color:var(--muted);margin-bottom:16px;">${workout.sub} · Tap exercise to log sets</div>`;
+
+  workout.exercises.forEach((ex, idx) => {
+    const done = !!(state.exDone[today] && state.exDone[today][ex.id]);
+    const logs = (state.setLogs[today] && state.setLogs[today][ex.id]) || initSets(ex.sets);
+
+    const div = document.createElement('div');
+    div.className = 'ex-card' + (done ? ' done' : '');
+    div.id = 'ex-' + ex.id;
+
+    let setsHTML = `
+      <div class="sets-table-header"><span>Set</span><span>Weight (lbs)</span><span>Reps</span><span>✓</span></div>
+    `;
+
+    logs.forEach((s, si) => {
+      setsHTML += `
+        <div class="set-row" id="setrow-${ex.id}-${si}">
+          <div class="set-num">${si+1}</div>
+          <input type="number" class="set-input" placeholder="0" value="${s.weight||''}" 
+            onchange="updateSet('${ex.id}',${si},'weight',this.value)"
+            inputmode="decimal">
+          <input type="number" class="set-input" placeholder="${ex.reps}" value="${s.reps||''}"
+            onchange="updateSet('${ex.id}',${si},'reps',this.value)"
+            inputmode="numeric">
+          <button class="set-done-btn ${s.logged?'logged':''}" onclick="toggleSetLogged('${ex.id}',${si})">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </button>
+        </div>
+      `;
+    });
+
+    setsHTML += `<button class="add-set-btn" onclick="addSet('${ex.id}')">+ Add Set</button>`;
+
+    div.innerHTML = `
+      <div class="ex-header" onclick="toggleExExpand('${ex.id}')">
+        <div class="ex-num-badge">${String(idx+1).padStart(2,'0')}</div>
+        <div class="ex-info">
+          <div class="ex-name">${ex.name}</div>
+          <div class="ex-sets-text">${ex.sets} sets × ${ex.reps} reps · Rest ${ex.rest}</div>
+        </div>
+        <div class="ex-done-check" onclick="toggleExDone(event,'${ex.id}')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+      </div>
+      <div class="ex-body">
+        <div class="ex-note-text">${ex.note}</div>
+        ${setsHTML}
+      </div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function initSets(n) {
+  return Array.from({length:n}, () => ({weight:'', reps:'', logged:false}));
+}
+
+function toggleExExpand(id) {
+  document.getElementById('ex-' + id).classList.toggle('expanded');
+}
+
+function toggleExDone(e, id) {
+  e.stopPropagation();
+  const today = todayStr();
+  if (!state.exDone[today]) state.exDone[today] = {};
+  state.exDone[today][id] = !state.exDone[today][id];
+
+  // Save best set to lift history when marking done
+  if (state.exDone[today][id]) {
+    saveLiftHistory(id);
+  }
+
+  saveState();
+  renderWorkout();
+  renderHome();
+}
+
+function updateSet(exId, setIdx, field, val) {
+  const today = todayStr();
+  if (!state.setLogs[today]) state.setLogs[today] = {};
+  const workout = getWorkouts()[getDayType()];
+  if (!workout) return;
+  const ex = workout.exercises.find(e => e.id === exId);
+  if (!state.setLogs[today][exId]) state.setLogs[today][exId] = initSets(ex.sets);
+  state.setLogs[today][exId][setIdx][field] = val;
+  saveState();
+}
+
+function toggleSetLogged(exId, setIdx) {
+  const today = todayStr();
+  if (!state.setLogs[today]) state.setLogs[today] = {};
+  const workout = getWorkouts()[getDayType()];
+  if (!workout) return;
+  const ex = workout.exercises.find(e => e.id === exId);
+  if (!state.setLogs[today][exId]) state.setLogs[today][exId] = initSets(ex.sets);
+  state.setLogs[today][exId][setIdx].logged = !state.setLogs[today][exId][setIdx].logged;
+  saveState();
+  // Re-render just the button
+  const btn = document.querySelector(`#setrow-${exId}-${setIdx} .set-done-btn`);
+  if (btn) btn.classList.toggle('logged', state.setLogs[today][exId][setIdx].logged);
+}
+
+function addSet(exId) {
+  const today = todayStr();
+  if (!state.setLogs[today]) state.setLogs[today] = {};
+  if (!state.setLogs[today][exId]) state.setLogs[today][exId] = [];
+  state.setLogs[today][exId].push({weight:'', reps:'', logged:false});
+  saveState();
+  renderWorkout();
+}
+
+function saveLiftHistory(exId) {
+  const today = todayStr();
+  const logs = state.setLogs[today] && state.setLogs[today][exId];
+  if (!logs) return;
+  const workout = getWorkouts()[getDayType()];
+  if (!workout) return;
+  const ex = workout.exercises.find(e => e.id === exId);
+  if (!ex) return;
+  const best = logs.reduce((b,s) => {
+    const w = parseFloat(s.weight)||0;
+    return w > (parseFloat(b.weight)||0) ? s : b;
+  }, logs[0]);
+  if (!parseFloat(best.weight)) return;
+  if (!state.liftHistory[ex.name]) state.liftHistory[ex.name] = [];
+  // Avoid duplicate same day
+  state.liftHistory[ex.name] = state.liftHistory[ex.name].filter(e => e.date !== today);
+  state.liftHistory[ex.name].push({ date: today, bestWeight: parseFloat(best.weight), bestReps: best.reps });
+  state.liftHistory[ex.name].sort((a,b) => a.date.localeCompare(b.date));
+  saveState();
+}
+
+// ══════════════════════════════════════════
+// PROGRESS
+// ══════════════════════════════════════════
+
+function renderProgress() {
+  renderWeightTab();
+}
+
+function switchProgressTab(tab) {
+  document.querySelectorAll('.p-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.p-tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.p-tab[onclick="switchProgressTab('${tab}')"]`).classList.add('active');
+  document.getElementById('ptab-' + tab).classList.add('active');
+  if (tab === 'weight') renderWeightTab();
+  if (tab === 'lifts') renderLiftChart();
+}
+
+function logWeight() {
+  const val = parseFloat(document.getElementById('weight-input').value);
+  if (!val || val < 50 || val > 500) return alert('Enter a valid weight');
+  const today = todayStr();
+  state.weightLog = state.weightLog.filter(e => e.date !== today);
+  state.weightLog.push({ date: today, weight: val });
+  state.weightLog.sort((a,b) => a.date.localeCompare(b.date));
+  saveState();
+  renderWeightTab();
+  renderHome();
+}
+
+function renderWeightTab() {
+  const logs = state.weightLog;
+  const listEl = document.getElementById('weight-log-list');
+  const svgEl = document.getElementById('weight-chart');
+  const emptyEl = document.getElementById('weight-chart-empty');
+
+  if (!logs.length) {
+    svgEl.style.display = 'none';
+    emptyEl.style.display = 'block';
+    listEl.innerHTML = '<div class="empty-state"><div>⚖️</div>No weight logged yet</div>';
+    return;
+  }
+
+  svgEl.style.display = 'block';
+  emptyEl.style.display = 'none';
+  drawChart(svgEl, logs.map(l=>l.weight), logs.map(l=>l.date), '#e8ff47');
+
+  listEl.innerHTML = [...logs].reverse().slice(0,10).map(l => `
+    <div class="log-entry">
+      <span>${formatDate(l.date)}</span>
+      <span class="log-val">${l.weight} lbs</span>
+    </div>
+  `).join('');
+}
+
+function renderLiftChart() {
+  const name = document.getElementById('lift-select').value;
+  const chartEl = document.getElementById('lift-chart');
+  const emptyEl = document.getElementById('lift-chart-empty');
+  const titleEl = document.getElementById('lift-chart-title');
+  const logWrap = document.getElementById('lift-log-wrap');
+  const logList = document.getElementById('lift-log-list');
+
+  if (!name) {
+    chartEl.style.display = 'none';
+    emptyEl.style.display = 'block';
+    logWrap.style.display = 'none';
+    return;
+  }
+
+  const logs = state.liftHistory[name] || [];
+  titleEl.textContent = name.toUpperCase();
+
+  if (!logs.length) {
+    chartEl.style.display = 'none';
+    emptyEl.style.display = 'block';
+    emptyEl.innerHTML = '<div>💪</div>No data yet for this exercise.<br>Complete a workout and mark it done!';
+    logWrap.style.display = 'none';
+    return;
+  }
+
+  chartEl.style.display = 'block';
+  emptyEl.style.display = 'none';
+  drawChart(chartEl, logs.map(l=>l.bestWeight), logs.map(l=>l.date), '#64b4ff');
+
+  logWrap.style.display = 'block';
+  logList.innerHTML = [...logs].reverse().slice(0,10).map(l => `
+    <div class="log-entry">
+      <span>${formatDate(l.date)}</span>
+      <span class="log-val">${l.bestWeight} lbs × ${l.bestReps} reps</span>
+    </div>
+  `).join('');
+}
+
+function drawChart(svgEl, values, labels, color) {
+  if (values.length < 1) return;
+  const W = 300, H = 120, PAD = 20;
+  const min = Math.min(...values) * 0.98;
+  const max = Math.max(...values) * 1.02;
+  const range = max - min || 1;
+
+  const pts = values.map((v,i) => {
+    const x = values.length === 1 ? W/2 : PAD + (i / (values.length-1)) * (W - PAD*2);
+    const y = H - PAD - ((v - min) / range) * (H - PAD*2);
+    return [x, y];
+  });
+
+  const pathD = pts.map((p,i) => (i===0?'M':'L') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+  const areaD = pathD + ` L${pts[pts.length-1][0].toFixed(1)} ${H} L${pts[0][0].toFixed(1)} ${H} Z`;
+
+  svgEl.innerHTML = `
+    <defs>
+      <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="${color}" stop-opacity="0.3"/>
+        <stop offset="100%" stop-color="${color}" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path d="${areaD}" fill="url(#grad)"/>
+    <path d="${pathD}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    ${pts.map((p,i) => `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="4" fill="${color}"/>`).join('')}
+    ${values.length <= 8 ? pts.map((p,i) => `<text x="${p[0].toFixed(1)}" y="${(H - 4).toFixed(1)}" text-anchor="middle" fill="#555" font-size="9">${labels[i].slice(5)}</text>`).join('') : ''}
+    <text x="${pts[pts.length-1][0]}" y="${(pts[pts.length-1][1]-8).toFixed(1)}" text-anchor="middle" fill="${color}" font-size="11" font-weight="bold">${values[values.length-1]}</text>
+  `;
+}
+
+function formatDate(str) {
+  return new Date(str + 'T12:00:00').toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+}
+
+// ══════════════════════════════════════════
+// SETTINGS
+// ══════════════════════════════════════════
+
+function renderSettings() {
+  const start = new Date(state.startDate);
+  document.getElementById('startdate-display').textContent = start.toLocaleDateString('en-US', { month:'long', day:'numeric', year:'numeric' });
+}
+
+function confirmReset() {
+  if (confirm('Reset today\'s meal and workout progress?')) {
+    const today = todayStr();
+    delete state.mealsDone[today];
+    delete state.exDone[today];
+    delete state.setLogs[today];
+    saveState();
+    alert('Today\'s progress reset!');
+    renderHome();
+  }
+}
+
+function confirmFullReset() {
+  if (confirm('Reset ALL data? This cannot be undone.')) {
+    localStorage.removeItem('eronfit_v1');
+    state = loadState();
+    saveState();
+    alert('All data reset!');
+    goTo('home');
+  }
+}
+
+// ══════════════════════════════════════════
+// MODALS
+// ══════════════════════════════════════════
+
+function openModal(type) {
+  const overlay = document.getElementById('modal-overlay');
+  const content = document.getElementById('modal-content');
+  overlay.classList.add('open');
+
+  if (type === 'edit-meals') {
+    const meals = getMeals();
+    const json = JSON.stringify(meals.standard, null, 2);
+    content.innerHTML = `
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div class="modal-title">Edit Meal Plan</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">Edit your meal data in JSON format. Come back to Claude to get a new meal plan generated and paste it here.</p>
+      <textarea class="edit-area" id="meal-edit-area">${json}</textarea>
+      <button class="save-btn" onclick="saveMealEdit()">Save Changes</button>
+    `;
+  } else if (type === 'edit-workout') {
+    const workouts = getWorkouts();
+    const json = JSON.stringify(workouts, null, 2);
+    content.innerHTML = `
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div class="modal-title">Edit Workout Plan</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">Edit your workout data in JSON format. Come back to Claude to modify your plan and paste it here.</p>
+      <textarea class="edit-area" id="workout-edit-area">${json}</textarea>
+      <button class="save-btn" onclick="saveWorkoutEdit()">Save Changes</button>
+    `;
+  } else if (type === 'edit-startdate') {
+    const start = new Date(state.startDate).toISOString().slice(0,10);
+    content.innerHTML = `
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div class="modal-title">Start Date</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">This is used for dinner rotation and streak tracking.</p>
+      <input type="date" class="big-input" id="startdate-input" value="${start}" style="margin-bottom:12px;">
+      <button class="save-btn" onclick="saveStartDate()">Save</button>
+    `;
+  } else if (type === 'install-instructions') {
+    content.innerHTML = `
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div class="modal-title">Install as App</div>
+      <div style="font-size:14px;color:#ccc;line-height:1.8;">
+        <p style="margin-bottom:12px;"><b style="color:var(--accent)">iPhone (Safari):</b></p>
+        <p>1. Open this page in Safari</p>
+        <p>2. Tap the Share button (box with arrow)</p>
+        <p>3. Scroll down and tap "Add to Home Screen"</p>
+        <p>4. Tap "Add" — done! 🎉</p>
+        <br>
+        <p style="margin-bottom:12px;"><b style="color:var(--accent)">Android (Chrome):</b></p>
+        <p>1. Open this page in Chrome</p>
+        <p>2. Tap the 3-dot menu</p>
+        <p>3. Tap "Add to Home Screen"</p>
+        <p>4. Tap "Add" — done! 🎉</p>
+        <br>
+        <p style="color:var(--muted);font-size:12px;">Your data is saved locally on your device and persists between sessions.</p>
+      </div>
+    `;
+  } else if (type === 'about') {
+    content.innerHTML = `
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div class="modal-title">EronFit v1.0</div>
+      <div style="font-size:14px;color:#ccc;line-height:1.8;">
+        <p>Built by Claude for Eron Carver.</p>
+        <br>
+        <p><b style="color:var(--accent)">Features:</b></p>
+        <p>• Daily meal + workout tracking</p>
+        <p>• Set-by-set weight logging</p>
+        <p>• Bodyweight trend chart</p>
+        <p>• Lift progression charts</p>
+        <p>• Auto dinner rotation</p>
+        <p>• Streak tracking</p>
+        <p>• Cheat day mode</p>
+        <p>• Fully editable meal + workout plans</p>
+        <br>
+        <p style="color:var(--muted);font-size:12px;">Come back to Claude any time to add features, tweak the plan, or build something new. 💪</p>
+      </div>
+    `;
+  }
+}
+
+function saveMealEdit() {
+  try {
+    const val = JSON.parse(document.getElementById('meal-edit-area').value);
+    if (!state.meals) state.meals = getMeals();
+    state.meals.standard = val;
+    saveState();
+    closeModal();
+    renderMeals();
+    alert('Meal plan updated!');
+  } catch(e) { alert('Invalid JSON. Check your formatting.'); }
+}
+
+function saveWorkoutEdit() {
+  try {
+    const val = JSON.parse(document.getElementById('workout-edit-area').value);
+    state.workouts = val;
+    saveState();
+    closeModal();
+    renderWorkout();
+    alert('Workout plan updated!');
+  } catch(e) { alert('Invalid JSON. Check your formatting.'); }
+}
+
+function saveStartDate() {
+  const val = document.getElementById('startdate-input').value;
+  if (!val) return;
+  state.startDate = new Date(val).toISOString();
+  saveState();
+  closeModal();
+  renderSettings();
+  alert('Start date updated!');
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+
+function closeModalOnOverlay(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+
+// ══════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════
+
+renderHome();
+</script>
+</body>
+</html>
