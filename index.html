@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -835,6 +835,22 @@ textarea.edit-area:focus { outline: none; border-color: var(--accent); }
 }
 .cheat-item:last-child { border-bottom: none; }
 .cheat-item::before { content: '→'; color: var(--accent2); flex-shrink: 0; }
+.day-nav{display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin-bottom:16px;}
+.day-nav-btn{background:rgba(108,92,231,0.15);border:none;color:var(--accent);font-size:20px;cursor:pointer;border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;line-height:1;font-weight:bold;}
+.day-nav-center{text-align:center;}
+.day-nav-label{font-size:14px;font-weight:600;color:#fff;}
+.day-nav-type{font-size:11px;color:var(--muted);margin-top:2px;}
+.shop-toggle-btn{width:100%;background:rgba(108,92,231,0.1);border:1px solid rgba(108,92,231,0.3);color:var(--accent);border-radius:12px;padding:13px;font-size:14px;font-weight:600;cursor:pointer;margin-top:4px;margin-bottom:4px;letter-spacing:0.3px;}
+.shop-section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-top:12px;}
+.shop-cat-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px;margin:14px 0 8px;}
+.shop-cat-label:first-child{margin-top:0;}
+.shop-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px;color:#ddd;cursor:pointer;user-select:none;}
+.shop-row:last-child{border-bottom:none;}
+.shop-box{width:20px;height:20px;border:1.5px solid rgba(255,255,255,0.2);border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.15s;}
+.shop-row.checked .shop-box{background:var(--accent);border-color:var(--accent);}
+.shop-row.checked .shop-item-text{text-decoration:line-through;color:var(--muted);}
+.shop-check-svg{width:11px;height:11px;stroke:#fff;fill:none;stroke-width:3;display:none;}
+.shop-row.checked .shop-check-svg{display:block;}
 </style>
 </head>
 <body>
@@ -923,8 +939,10 @@ textarea.edit-area:focus { outline: none; border-color: var(--accent); }
 
     <!-- MEALS -->
     <div class="page" id="page-meals">
-      <div class="section-hdr bebas" style="margin-top:8px;">Today's Meals</div>
+      <div class="section-hdr bebas" style="margin-top:8px;">Meals</div>
       <div id="meals-container"></div>
+      <button class="shop-toggle-btn" onclick="toggleShoppingList()">🛒 Weekly Shopping List</button>
+      <div id="shopping-list-container" style="display:none"></div>
     </div>
 
     <!-- WORKOUT -->
@@ -1180,6 +1198,7 @@ const DEFAULT_WORKOUTS = {
 // ══════════════════════════════════════════
 
 let state = loadState();
+let viewDate = new Date();
 
 function loadState() {
   try {
@@ -1228,19 +1247,26 @@ function getDayType() {
   return 'rest';
 }
 
+function getDinnerForDate(date) {
+  const start = new Date(state.startDate); start.setHours(12,0,0,0);
+  const d = new Date(date); d.setHours(12,0,0,0);
+  const diff = Math.round((d - start) / (1000*60*60*24));
+  return DINNER_ROTATION[((diff % 2) + 2) % 2];
+}
+
 function getDinnerForDay() {
-  // Auto-rotate based on days since start
-  const start = new Date(state.startDate);
-  const now = new Date();
-  const diff = Math.floor((now - start) / (1000*60*60*24));
-  return DINNER_ROTATION[diff % 2];
+  return getDinnerForDate(new Date());
+}
+
+function getMealsForDate(date) {
+  const meals = getMeals();
+  const base = meals.standard.filter(m => !m.isDinner);
+  const dinner = getDinnerForDate(date);
+  return [...base, dinner];
 }
 
 function getMealsForToday() {
-  const meals = getMeals();
-  const base = meals.standard.filter(m => !m.isDinner);
-  const dinner = getDinnerForDay();
-  return [...base, dinner];
+  return getMealsForDate(new Date());
 }
 
 // ══════════════════════════════════════════
@@ -1255,8 +1281,8 @@ function goTo(page) {
   document.getElementById('screen').scrollTop = 0;
 
   if (page === 'home') renderHome();
-  if (page === 'meals') renderMeals();
-  if (page === 'workout') renderWorkout();
+  if (page === 'meals') { viewDate = new Date(); renderMeals(); }
+  if (page === 'workout') { viewDate = new Date(); renderWorkout(); }
   if (page === 'progress') renderProgress();
   if (page === 'settings') renderSettings();
 }
@@ -1360,13 +1386,114 @@ function dismissInstall() {
 // MEALS
 // ══════════════════════════════════════════
 
+function viewDateStr() {
+  const d = viewDate;
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+}
+
+function formatViewDateLabel() {
+  const today = new Date(); today.setHours(0,0,0,0);
+  const d = new Date(viewDate); d.setHours(0,0,0,0);
+  const diff = Math.round((d - today) / (1000*60*60*24));
+  if (diff === 0) return 'Today';
+  if (diff === -1) return 'Yesterday';
+  if (diff === 1) return 'Tomorrow';
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  return days[d.getDay()] + ' ' + (d.getMonth()+1) + '/' + d.getDate();
+}
+
+function changeViewDate(delta, page) {
+  viewDate = new Date(viewDate);
+  viewDate.setDate(viewDate.getDate() + delta);
+  if (page === 'meals') renderMeals();
+  if (page === 'workout') renderWorkout();
+}
+
+function dayNavHTML(page) {
+  const dayType = getDayTypeForDate(viewDate);
+  const dayLabels = { push:'Push Day 💪', pull:'Pull Day 🔗', legs:'Leg Day 🦵', bike:'Bike Day 🚵', cook:'Meal Prep 🍳', rest:'Rest Day 😴' };
+  return `<div class="day-nav">
+    <button class="day-nav-btn" onclick="changeViewDate(-1,'${page}')">&#8249;</button>
+    <div class="day-nav-center">
+      <div class="day-nav-label">${formatViewDateLabel()}</div>
+      <div class="day-nav-type">${dayLabels[dayType] || ''}</div>
+    </div>
+    <button class="day-nav-btn" onclick="changeViewDate(1,'${page}')">&#8250;</button>
+  </div>`;
+}
+
+let shopChecked = {};
+
+function toggleShopItem(key) {
+  shopChecked[key] = !shopChecked[key];
+  renderShoppingList();
+}
+
+function toggleShoppingList() {
+  const el = document.getElementById('shopping-list-container');
+  if (!el) return;
+  if (el.style.display === 'none' || el.style.display === '') {
+    el.style.display = 'block';
+    renderShoppingList();
+  } else {
+    el.style.display = 'none';
+  }
+}
+
+const SHOPPING_LIST = [
+  { cat: '🥩 Proteins', items: [
+    { key:'beef', text:'Ground beef 80/20 — ~2.2 kg (lunches + taco nights)' },
+    { key:'chicken', text:'Chicken breast — ~750g (buffalo dinner nights)' },
+    { key:'whey', text:'GreenWise Whey Protein — ~14 scoops' },
+    { key:'eggs', text:'Eggs — 14 large' },
+    { key:'jerky', text:'Beef jerky — 1–2 packs (snack)' },
+  ]},
+  { cat: '🥛 Dairy', items: [
+    { key:'milk', text:'Whole milk — ~2.5 L / 10 cups' },
+    { key:'yogurt', text:'Full fat Greek yogurt (Chobani/Fage) — 7 cups' },
+    { key:'cheese', text:'Shredded cheese — 1 large bag' },
+    { key:'sourcream', text:'Sour cream — 1 small container' },
+    { key:'ranch', text:'Ranch dressing — 1 bottle' },
+    { key:'stringcheese', text:'String cheese — 1 pack (optional)' },
+  ]},
+  { cat: '🍚 Grains & Pantry', items: [
+    { key:'rice', text:'White rice — 1 large bag (~14 cups cooked / week)' },
+    { key:'beans', text:'Black beans — 2 cans (taco nights)' },
+    { key:'tacoseason', text:'Taco seasoning — 2 packets' },
+    { key:'franks', text:"Frank's RedHot — 1 bottle" },
+    { key:'hotsauce', text:'Hot sauce — 1 bottle (lunch)' },
+    { key:'salsa', text:'Salsa — 1 jar' },
+  ]},
+  { cat: '🍌 Produce', items: [
+    { key:'bananas', text:'Bananas — 7' },
+  ]},
+  { cat: '🥜 Other', items: [
+    { key:'pb', text:'Peanut butter — 1 jar (shake topper)' },
+  ]},
+];
+
+function renderShoppingList() {
+  const el = document.getElementById('shopping-list-container');
+  if (!el) return;
+  let html = '<div class="shop-section"><div style="font-size:15px;font-weight:700;color:#fff;margin-bottom:4px;">🛒 Weekly Shopping List</div><div style="font-size:12px;color:var(--muted);margin-bottom:14px;">Everything you need for a full week of your meal plan</div>';
+  SHOPPING_LIST.forEach(cat => {
+    html += `<div class="shop-cat-label">${cat.cat}</div>`;
+    cat.items.forEach(item => {
+      const checked = shopChecked[item.key] || false;
+      html += `<div class="shop-row${checked?' checked':''}" onclick="toggleShopItem('${item.key}')"><div class="shop-box"><svg class="shop-check-svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span class="shop-item-text">${item.text}</span></div>`;
+    });
+  });
+  html += '</div>';
+  el.innerHTML = html;
+}
+
 function renderMeals() {
   const container = document.getElementById('meals-container');
-  const today = todayStr();
+  const today = viewDateStr();
   const meals = getMeals();
 
   if (state.cheatDay) {
-    container.innerHTML = `
+    container.innerHTML += `
       <div style="background:rgba(255,107,53,0.1);border:1px solid rgba(255,107,53,0.3);border-radius:14px;padding:14px 16px;margin-bottom:16px;font-size:13px;color:#ccc;">
         🍕 <b style="color:var(--accent2)">Cheat Day Active</b> — Enjoy yourself, just stay protein-focused where you can.
       </div>
@@ -1389,8 +1516,9 @@ function renderMeals() {
     return;
   }
 
-  const todayMeals = getMealsForToday();
-  container.innerHTML = '';
+  container.innerHTML = dayNavHTML('meals');
+
+  const todayMeals = getMealsForDate(viewDate);
 
   todayMeals.forEach((meal, idx) => {
     const done = !!(state.mealsDone[today] && state.mealsDone[today][meal.id]);
@@ -1428,7 +1556,7 @@ function toggleMealExpand(id) {
 
 function toggleMeal(e, id) {
   e.stopPropagation();
-  const today = todayStr();
+  const today = viewDateStr();
   if (!state.mealsDone[today]) state.mealsDone[today] = {};
   state.mealsDone[today][id] = !state.mealsDone[today][id];
   saveState();
@@ -1443,10 +1571,11 @@ function toggleMeal(e, id) {
 function renderWorkout() {
   const container = document.getElementById('workout-container');
   const title = document.getElementById('workout-page-title');
-  const today = todayStr();
-  const dayType = getDayType();
+  const today = viewDateStr();
+  const dayType = getDayTypeForDate(viewDate);
   const workouts = getWorkouts();
   const workout = workouts[dayType];
+  container.innerHTML = dayNavHTML('workout');
 
   if (!workout) {
     const msgs = {
@@ -1455,8 +1584,8 @@ function renderWorkout() {
       rest: { icon:'😴', t:'Rest Day', s:'Recover hard. Sleep well. Eat your protein. Your muscles grow on rest days.' }
     };
     const m = msgs[dayType] || msgs.rest;
-    title.textContent = "Today's Workout";
-    container.innerHTML = `
+    title.textContent = "Workout";
+    container.innerHTML += `
       <div class="rest-day-card">
         <div class="rest-day-emoji">${m.icon}</div>
         <div class="rest-day-title">${m.t}</div>
@@ -1467,7 +1596,7 @@ function renderWorkout() {
   }
 
   title.textContent = workout.name;
-  container.innerHTML = `<div style="font-size:13px;color:var(--muted);margin-bottom:16px;">${workout.sub} · Tap exercise to log sets</div>`;
+  container.innerHTML += `<div style="font-size:13px;color:var(--muted);margin-bottom:16px;">${workout.sub} ┬╖ Tap exercise to log sets</div>`;
 
   workout.exercises.forEach((ex, idx) => {
     const done = !!(state.exDone[today] && state.exDone[today][ex.id]);
@@ -1530,7 +1659,7 @@ function toggleExExpand(id) {
 
 function toggleExDone(e, id) {
   e.stopPropagation();
-  const today = todayStr();
+  const today = viewDateStr();
   if (!state.exDone[today]) state.exDone[today] = {};
   state.exDone[today][id] = !state.exDone[today][id];
 
@@ -1545,9 +1674,9 @@ function toggleExDone(e, id) {
 }
 
 function updateSet(exId, setIdx, field, val) {
-  const today = todayStr();
+  const today = viewDateStr();
   if (!state.setLogs[today]) state.setLogs[today] = {};
-  const workout = getWorkouts()[getDayType()];
+  const workout = getWorkouts()[getDayTypeForDate(viewDate)];
   if (!workout) return;
   const ex = workout.exercises.find(e => e.id === exId);
   if (!state.setLogs[today][exId]) state.setLogs[today][exId] = initSets(ex.sets);
@@ -1556,9 +1685,9 @@ function updateSet(exId, setIdx, field, val) {
 }
 
 function toggleSetLogged(exId, setIdx) {
-  const today = todayStr();
+  const today = viewDateStr();
   if (!state.setLogs[today]) state.setLogs[today] = {};
-  const workout = getWorkouts()[getDayType()];
+  const workout = getWorkouts()[getDayTypeForDate(viewDate)];
   if (!workout) return;
   const ex = workout.exercises.find(e => e.id === exId);
   if (!state.setLogs[today][exId]) state.setLogs[today][exId] = initSets(ex.sets);
@@ -1579,10 +1708,10 @@ function addSet(exId) {
 }
 
 function saveLiftHistory(exId) {
-  const today = todayStr();
+  const today = viewDateStr();
   const logs = state.setLogs[today] && state.setLogs[today][exId];
   if (!logs) return;
-  const workout = getWorkouts()[getDayType()];
+  const workout = getWorkouts()[getDayTypeForDate(viewDate)];
   if (!workout) return;
   const ex = workout.exercises.find(e => e.id === exId);
   if (!ex) return;
