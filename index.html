@@ -835,6 +835,14 @@ textarea.edit-area:focus { outline: none; border-color: var(--accent); }
 }
 .cheat-item:last-child { border-bottom: none; }
 .cheat-item::before { content: '→'; color: var(--accent2); flex-shrink: 0; }
+.macros-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:14px;}
+.macro-row{margin-bottom:12px;}
+.macro-row:last-child{margin-bottom:0;}
+.macro-row-label{display:flex;justify-content:space-between;align-items:center;font-size:13px;margin-bottom:5px;}
+.macro-name{color:#ddd;font-weight:600;}
+.macro-vals{color:var(--muted);font-size:12px;}
+.macro-bar-wrap{height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;}
+.macro-bar-fill{height:100%;border-radius:3px;transition:width 0.4s ease;}
 .day-nav{display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin-bottom:16px;}
 .day-nav-btn{background:rgba(108,92,231,0.15);border:none;color:var(--accent);font-size:20px;cursor:pointer;border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;line-height:1;font-weight:bold;}
 .day-nav-center{text-align:center;}
@@ -920,6 +928,12 @@ textarea.edit-area:focus { outline: none; border-color: var(--accent); }
             <div class="progress-fill orange" id="meal-progress-fill" style="width:0%"></div>
           </div>
         </div>
+      </div>
+
+      <!-- Macros tracker -->
+      <div class="macros-card">
+        <div class="banner-title">Today's Macros</div>
+        <div id="macros-rows"></div>
       </div>
 
       <div class="cheat-toggle-row">
@@ -1337,6 +1351,31 @@ function renderHome() {
   document.getElementById('meal-progress-fill').style.width = mealPct + '%';
   document.getElementById('meal-progress-pct').textContent = mealPct + '%';
   document.getElementById('today-meal-summary').textContent = todayMeals.length + ' meals planned';
+
+  // Macros
+  const doneMealIds = new Set(Object.keys(state.mealsDone[today] || {}).filter(k => state.mealsDone[today][k]));
+  function parseMacroNum(str) { return parseInt(str) || 0; }
+  let totP = 0, eatP = 0, totC = 0, eatC = 0, totK = 0, eatK = 0;
+  todayMeals.forEach(meal => {
+    const p = parseMacroNum(meal.protein), c = parseMacroNum(meal.cal), k = parseMacroNum(meal.carbs);
+    totP += p; totC += c; totK += k;
+    if (doneMealIds.has(meal.id)) { eatP += p; eatC += c; eatK += k; }
+  });
+  const macros = [
+    { label: 'Protein', eaten: eatP, total: totP, unit: 'g', color: '#6c5ce7' },
+    { label: 'Calories', eaten: eatC, total: totC, unit: '', color: '#fd79a8' },
+    { label: 'Carbs',   eaten: eatK, total: totK, unit: 'g', color: '#00cec9' },
+  ];
+  document.getElementById('macros-rows').innerHTML = macros.map(m => {
+    const pct = m.total ? Math.min(100, Math.round(m.eaten / m.total * 100)) : 0;
+    return `<div class="macro-row">
+      <div class="macro-row-label">
+        <span class="macro-name">${m.label}</span>
+        <span class="macro-vals">${m.eaten}${m.unit} / ${m.total}${m.unit}</span>
+      </div>
+      <div class="macro-bar-wrap"><div class="macro-bar-fill" style="width:${pct}%;background:${m.color}"></div></div>
+    </div>`;
+  }).join('');
 
   // Latest weight
   const wl = state.weightLog;
