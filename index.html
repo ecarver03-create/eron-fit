@@ -843,6 +843,22 @@ textarea.edit-area:focus { outline: none; border-color: var(--accent); }
 .macro-vals{color:var(--muted);font-size:12px;}
 .macro-bar-wrap{height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;}
 .macro-bar-fill{height:100%;border-radius:3px;transition:width 0.4s ease;}
+.custom-food-btn{width:100%;background:rgba(255,255,255,0.04);border:1px dashed rgba(255,255,255,0.15);color:#aaa;border-radius:12px;padding:13px;font-size:14px;cursor:pointer;margin-bottom:12px;text-align:center;}
+.custom-food-form{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:12px;}
+.custom-food-form-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:12px;}
+.custom-form-row{display:flex;gap:8px;margin-bottom:10px;}
+.custom-form-row input{flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#fff;padding:9px 10px;font-size:13px;min-width:0;}
+.custom-form-row input::placeholder{color:var(--muted);}
+.custom-food-name-input{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#fff;padding:9px 10px;font-size:13px;margin-bottom:10px;box-sizing:border-box;}
+.custom-food-name-input::placeholder{color:var(--muted);}
+.custom-food-add-btn{width:100%;background:var(--accent);border:none;color:#fff;border-radius:8px;padding:11px;font-size:14px;font-weight:700;cursor:pointer;}
+.custom-log-section{margin-bottom:12px;}
+.custom-log-title{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:8px;}
+.custom-log-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:11px 14px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.custom-log-name{font-size:13px;font-weight:600;color:#fff;}
+.custom-log-macros{font-size:11px;color:var(--muted);margin-top:3px;}
+.custom-log-del{background:none;border:none;color:rgba(255,255,255,0.25);font-size:18px;cursor:pointer;padding:0;line-height:1;flex-shrink:0;}
+.custom-log-del:hover{color:var(--accent2);}
 .day-nav{display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin-bottom:16px;}
 .day-nav-btn{background:rgba(108,92,231,0.15);border:none;color:var(--accent);font-size:20px;cursor:pointer;border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;line-height:1;font-weight:bold;}
 .day-nav-center{text-align:center;}
@@ -1231,7 +1247,8 @@ function loadState() {
     lastActiveDate: null,
     installDismissed: false,
     workouts: null,
-    meals: null
+    meals: null,
+    customFoods: {}     // { 'YYYY-MM-DD': [ {id, name, protein, cal, carbs} ] }
   };
 }
 
@@ -1360,6 +1377,10 @@ function renderHome() {
     const p = parseMacroNum(meal.protein), c = parseMacroNum(meal.cal), k = parseMacroNum(meal.carbs);
     totP += p; totC += c; totK += k;
     if (doneMealIds.has(meal.id)) { eatP += p; eatC += c; eatK += k; }
+  });
+  // Add custom logged foods (always count as eaten)
+  ((state.customFoods && state.customFoods[today]) || []).forEach(f => {
+    eatP += f.protein || 0; eatC += f.cal || 0; eatK += f.carbs || 0;
   });
   const macros = [
     { label: 'Protein', eaten: eatP, total: totP, unit: 'g', color: '#6c5ce7' },
@@ -1526,6 +1547,42 @@ function renderShoppingList() {
   el.innerHTML = html;
 }
 
+function toggleCustomFoodForm() {
+  const form = document.getElementById('custom-food-form');
+  const btn  = document.getElementById('custom-food-btn');
+  const open = form.style.display !== 'none';
+  form.style.display = open ? 'none' : 'block';
+  btn.textContent = open ? '+ Log Custom Food' : '✕ Cancel';
+  if (!open) document.getElementById('cf-name').focus();
+}
+
+function addCustomFood() {
+  const name    = document.getElementById('cf-name').value.trim();
+  const protein = parseInt(document.getElementById('cf-protein').value) || 0;
+  const cal     = parseInt(document.getElementById('cf-cal').value)     || 0;
+  const carbs   = parseInt(document.getElementById('cf-carbs').value)   || 0;
+  if (!name) { document.getElementById('cf-name').focus(); return; }
+  const today = viewDateStr();
+  if (!state.customFoods) state.customFoods = {};
+  if (!state.customFoods[today]) state.customFoods[today] = [];
+  state.customFoods[today].push({ id: Date.now().toString(), name, protein, cal, carbs });
+  saveState();
+  // Reset form
+  ['cf-name','cf-protein','cf-cal','cf-carbs'].forEach(id => document.getElementById(id).value = '');
+  toggleCustomFoodForm();
+  renderMeals();
+  renderHome();
+}
+
+function deleteCustomFood(id) {
+  const today = viewDateStr();
+  if (!state.customFoods || !state.customFoods[today]) return;
+  state.customFoods[today] = state.customFoods[today].filter(f => f.id !== id);
+  saveState();
+  renderMeals();
+  renderHome();
+}
+
 function renderMeals() {
   const container = document.getElementById('meals-container');
   const today = viewDateStr();
@@ -1586,6 +1643,47 @@ function renderMeals() {
     `;
     container.appendChild(div);
   });
+
+  // Custom foods logged today
+  const custom = (state.customFoods && state.customFoods[today]) || [];
+  if (custom.length) {
+    const logSection = document.createElement('div');
+    logSection.className = 'custom-log-section';
+    logSection.innerHTML = '<div class="custom-log-title">Extra Foods Logged</div>' +
+      custom.map(f => `
+        <div class="custom-log-item">
+          <div>
+            <div class="custom-log-name">${f.name}</div>
+            <div class="custom-log-macros">${f.protein ? f.protein+'g protein · ' : ''}${f.cal ? f.cal+' cal' : ''}${f.carbs ? ' · '+f.carbs+'g carbs' : ''}</div>
+          </div>
+          <button class="custom-log-del" onclick="deleteCustomFood('${f.id}')">×</button>
+        </div>`).join('');
+    container.appendChild(logSection);
+  }
+
+  // Log custom food button + form
+  const btnEl = document.createElement('button');
+  btnEl.className = 'custom-food-btn';
+  btnEl.id = 'custom-food-btn';
+  btnEl.textContent = '+ Log Custom Food';
+  btnEl.onclick = toggleCustomFoodForm;
+  container.appendChild(btnEl);
+
+  const formEl = document.createElement('div');
+  formEl.className = 'custom-food-form';
+  formEl.id = 'custom-food-form';
+  formEl.style.display = 'none';
+  formEl.innerHTML = `
+    <div class="custom-food-form-title">Log a Food</div>
+    <input class="custom-food-name-input" id="cf-name" placeholder="Food name (e.g. Chipotle Bowl)" />
+    <div class="custom-form-row">
+      <input type="number" id="cf-protein" placeholder="Protein (g)"  inputmode="numeric" />
+      <input type="number" id="cf-cal"     placeholder="Calories"      inputmode="numeric" />
+      <input type="number" id="cf-carbs"   placeholder="Carbs (g)"    inputmode="numeric" />
+    </div>
+    <button class="custom-food-add-btn" onclick="addCustomFood()">Add</button>
+  `;
+  container.appendChild(formEl);
 }
 
 function toggleMealExpand(id) {
